@@ -1,0 +1,33 @@
+{
+  "artifact": "parkview-databricks-microsite-codex-ready",
+  "createdFor": "Parkview Health onsite briefing",
+  "createdBy": "West Monroe microsite concept",
+  "stack": "static HTML/CSS/JS prototype; recommended conversion to Vite + React if productionizing",
+  "keyFiles": [
+    "index.html",
+    "assets/css/styles.css",
+    "assets/js/main.js",
+    "content/site-content.json",
+    "docs/codex-build-prompt.md",
+    "docs/functionality-spec.md",
+    "docs/asset-notes.md",
+    "content/content-model.json",
+    "design-tokens.json",
+    "assets/logo-manifest.json",
+    "docs/finished-product-detail-spec.md",
+    "VALIDATION.md"
+  ],
+  "mustPreserve": [
+    "separation of platform data products from analytics outcomes",
+    "featured Post-Acquisition Data Integration Hub use case",
+    "Redox Engine callout for streaming data",
+    "Sigma callout for rapid insights and featured demo",
+    "West Monroe branding on header and footer"
+  ],
+  "qualityNotes": [
+    "static HTML/CSS/JS package",
+    "JS syntax validated with node --check",
+    "JSON content validated",
+    "local logos are treatments; use manifest URLs or approved brand libraries for production"
+  ]
+}

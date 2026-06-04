@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 54" role="img" aria-labelledby="redoxTitle">
+  <title id="redoxTitle">Redox Engine</title>
+  <rect width="190" height="54" rx="10" fill="none"/>
+  <g transform="translate(4 7)">
+    <rect x="0" y="0" width="40" height="40" rx="12" fill="#FFF1F0"/>
+    <path d="M10 14c4-6 16-6 20 0M10 26c4 6 16 6 20 0" fill="none" stroke="#F04438" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="20" cy="20" r="5" fill="#F04438"/>
+  </g>
+  <text x="55" y="31" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="850" fill="#101828" letter-spacing="-.6">Redox</text>
+  <text x="132" y="31" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="800" fill="#F04438" letter-spacing="1.4">ENGINE</text>
+</svg>

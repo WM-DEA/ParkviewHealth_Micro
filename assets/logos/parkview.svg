@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 48" role="img" aria-labelledby="pvTitle">
+  <title id="pvTitle">Parkview Health</title>
+  <rect width="210" height="48" rx="10" fill="none"/>
+  <g transform="translate(4 6)">
+    <rect x="0" y="0" width="36" height="36" rx="9" fill="#EAF7F4"/>
+    <path d="M18 8v20M8 18h20" stroke="#0E7C73" stroke-width="4" stroke-linecap="round"/>
+    <path d="M11 27c8-7 14-7 22 0" stroke="#66C2B7" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </g>
+  <text x="52" y="25" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="850" fill="#0E3B43" letter-spacing="-.5">Parkview</text>
+  <text x="53" y="39" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="800" fill="#0E7C73" letter-spacing="2.1">HEALTH</text>
+</svg>

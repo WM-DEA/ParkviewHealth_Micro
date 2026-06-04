@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 54" role="img" aria-labelledby="sigmaTitle">
+  <title id="sigmaTitle">Sigma Computing</title>
+  <rect width="190" height="54" rx="10" fill="none"/>
+  <g transform="translate(4 7)">
+    <rect x="0" y="0" width="40" height="40" rx="10" fill="#111827"/>
+    <path d="M28 9H11l12 11-12 11h17" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="30" cy="31" r="4" fill="#23E1B9"/>
+  </g>
+  <text x="55" y="33" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="850" fill="#101828" letter-spacing="-.6">Sigma</text>
+  <text x="129" y="33" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" fill="#667085" letter-spacing="1.5">BI</text>
+</svg>

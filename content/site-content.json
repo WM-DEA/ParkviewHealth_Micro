@@ -1,0 +1,724 @@
+{
+  "client": "Parkview Health",
+  "preparedBy": "West Monroe",
+  "vendors": [
+    "Databricks",
+    "Sigma Computing",
+    "Redox Engine"
+  ],
+  "story": {
+    "headline": "Unified Healthcare Data. Intelligent Outcomes.",
+    "subheadline": "A modern Databricks-centric data ecosystem that converts fragmented clinical, operational, financial, streaming, and unstructured data into trusted intelligence and workflow action.",
+    "thesis": "The platform is not the destination. It is the governed foundation that lets Parkview move from fragmented data to rapid insights, predictive intelligence, and AI-enabled workflows."
+  },
+  "foundationComponents": [
+    {
+      "id": "core-system-data",
+      "title": "Core Application System Data",
+      "summary": "Ingest, normalize, and cross-aggregate data from the systems that run the health system so teams can analyze activity across departments, service lines, and legal entities.",
+      "dataTypes": [
+        "Clinical Data",
+        "Financial Data",
+        "Operational Data",
+        "Master Data"
+      ],
+      "typicalScope": [
+        "EHR and scheduling",
+        "Pharmacy and laboratory",
+        "Financial management and revenue cycle",
+        "ERP, supply chain, HRIS, timekeeping",
+        "Ancillary and departmental applications"
+      ],
+      "benefits": [
+        "Creates a shared source of truth for key metrics",
+        "Reduces data silos and duplicate reporting effort",
+        "Enables cross-functional root-cause analysis",
+        "Improves trust in enterprise reporting"
+      ],
+      "initialUseCases": [
+        "Post-Acquisition Data Integration Hub",
+        "Sigma AI Business Intelligence"
+      ],
+      "futureUseCases": [
+        "Clinical Command Center",
+        "Clinician Scheduling Optimization",
+        "Supply Chain Optimization"
+      ]
+    },
+    {
+      "id": "streaming-data",
+      "title": "Streaming Data",
+      "summary": "Enable near-real-time feeds from integration engines, event streams, and connected devices so operational teams can respond to time-sensitive signals.",
+      "partner": "Redox Engine",
+      "dataTypes": [
+        "Clinical Data",
+        "Operational Data",
+        "Streaming Events"
+      ],
+      "typicalScope": [
+        "ADT feeds",
+        "Clinical alerts",
+        "Payer and partner events",
+        "Connected / IoT device telemetry",
+        "Operational trigger events"
+      ],
+      "benefits": [
+        "Acts as a connection hub to relevant user systems",
+        "Enables proactive action on time-sensitive triggers",
+        "Improves visibility into lagging or summary metrics",
+        "Supports real-time workflow activation"
+      ],
+      "initialUseCases": [
+        "Redox ADT Integration",
+        "Databricks Genie - AI BI"
+      ],
+      "futureUseCases": [
+        "Clinical Command Center",
+        "Clinical Decision Support",
+        "Patient Engagement Chatbots"
+      ]
+    },
+    {
+      "id": "unstructured-data",
+      "title": "Unstructured Data",
+      "summary": "Convert files, images, faxes, transcripts, and machine-generated documents into searchable, analyzable, AI-ready data products.",
+      "dataTypes": [
+        "Clinical Data",
+        "Documents / Images",
+        "Text and Audio"
+      ],
+      "typicalScope": [
+        "Scans and faxes",
+        "Clinical imaging and radiology reports",
+        "Machine-generated files",
+        "Call transcripts",
+        "Continuity of care documents"
+      ],
+      "benefits": [
+        "Reduces manual document review",
+        "Makes hidden context available to analytics and AI",
+        "Improves retrieval and routing",
+        "Enables data enrichment for downstream decisions"
+      ],
+      "initialUseCases": [
+        "Hyland OnBase - Continuity of Care"
+      ],
+      "futureUseCases": [
+        "IT Operating Hub",
+        "Patient Engagement",
+        "Clinical Knowledge Search"
+      ]
+    }
+  ],
+  "platformDataProducts": [
+    {
+      "title": "Certified Metrics",
+      "description": "Gold-layer metric definitions with lineage, ownership, and quality checks so executives and operators use the same language."
+    },
+    {
+      "title": "Normalized Views",
+      "description": "Reusable consumption-ready views that standardize patient, encounter, provider, claim, supply, and finance concepts."
+    },
+    {
+      "title": "Forecast / Budget",
+      "description": "Planning-ready datasets that connect historical performance, run-rate assumptions, and predictive signals."
+    },
+    {
+      "title": "Interop",
+      "description": "FHIR, HL7, API, and partner exchange patterns that allow the platform to serve both analytics and operational integration needs."
+    },
+    {
+      "title": "Transaction Detail",
+      "description": "Traceable detail-level data for drill-down analysis across encounters, claims, payments, orders, schedules, and supply activity."
+    },
+    {
+      "title": "Reusable AI Features",
+      "description": "Curated features, embeddings, and governed model inputs that reduce the lift for future AI and predictive use cases."
+    }
+  ],
+  "analyticsCapabilities": [
+    {
+      "title": "Rapid Insights",
+      "description": "Self-service analytics and guided executive reporting on trusted data products.",
+      "tools": [
+        "Sigma Computing",
+        "Databricks SQL",
+        "Databricks Genie",
+        "Databricks Apps"
+      ],
+      "examples": [
+        "Finance KPI cockpit",
+        "Acquisition integration reporting",
+        "Operational performance huddles",
+        "Provider access and scheduling views"
+      ]
+    },
+    {
+      "title": "Predictive Analytics",
+      "description": "Models that estimate future outcomes and expose leading indicators for earlier intervention.",
+      "tools": [
+        "Databricks Lakehouse AI",
+        "MLflow",
+        "Feature Store",
+        "Model Serving"
+      ],
+      "examples": [
+        "Capacity forecasting",
+        "Readmission risk",
+        "Workforce demand forecasting",
+        "Supply variance prediction"
+      ]
+    },
+    {
+      "title": "AI & Workflow",
+      "description": "AI-powered interfaces and operational apps that act on governed data in the flow of work.",
+      "tools": [
+        "Databricks Apps",
+        "Databricks Lakebase",
+        "Redox Engine",
+        "Sigma AI Apps"
+      ],
+      "examples": [
+        "Care coordination worklists",
+        "Patient engagement assistant",
+        "Scheduling optimization",
+        "AI outputs surfaced in clinical workflows"
+      ]
+    }
+  ],
+  "featuredUseCase": {
+    "title": "Post-Acquisition Data Integration Hub",
+    "primaryOutcome": "Rapid Insights",
+    "description": "Integrate acquired-system clinical and financial data into Databricks, map key definitions to an enterprise glossary, and publish certified metrics for analysis in Sigma.",
+    "partners": [
+      "Databricks",
+      "Sigma Computing",
+      "Redox Engine"
+    ],
+    "flow": [
+      "Acquire new data sources",
+      "Discover data inventory and quality",
+      "Standardize key data elements",
+      "Publish to certified metric hub",
+      "Analyze in Sigma dashboards"
+    ],
+    "benefitsToValidate": [
+      "Reduction in manual reconciliation effort",
+      "Faster acquired-entity KPI onboarding",
+      "Improved confidence in executive reporting",
+      "Earlier identification of data quality gaps",
+      "Reusable integration pattern for future transactions"
+    ],
+    "prerequisites": [
+      "Core Application System Data",
+      "Certified Metrics",
+      "Normalized Views",
+      "Data Quality Rules"
+    ],
+    "complexity": "Medium",
+    "demoSlots": [
+      "Architecture walkthrough",
+      "Data quality profiling",
+      "Metric certification",
+      "Sigma executive dashboard"
+    ]
+  },
+  "sourceSystems": [
+    {
+      "name": "Integration Engine",
+      "detail": "Data ingestion and orchestration",
+      "icon": "network",
+      "domain": "Streaming data"
+    },
+    {
+      "name": "Connected / IoT Devices",
+      "detail": "Real-time device and sensor signals",
+      "icon": "wifi",
+      "domain": "Streaming data"
+    },
+    {
+      "name": "Scheduling and Referrals",
+      "detail": "Appointments, referrals, capacity",
+      "icon": "calendar",
+      "domain": "System data"
+    },
+    {
+      "name": "Electronic Health Record",
+      "detail": "Clinical documentation and encounters",
+      "icon": "clipboard",
+      "domain": "System data"
+    },
+    {
+      "name": "Pharmacy / Laboratory",
+      "detail": "Medications, orders, tests, results",
+      "icon": "beaker",
+      "domain": "System data"
+    },
+    {
+      "name": "Financial Management System",
+      "detail": "Billing, claims, payments, RCA",
+      "icon": "dollar",
+      "domain": "System data"
+    },
+    {
+      "name": "Enterprise Resource Planner",
+      "detail": "HR, supply chain, operations",
+      "icon": "org",
+      "domain": "System data"
+    },
+    {
+      "name": "Scanning / Faxing Systems",
+      "detail": "Legacy content and documents",
+      "icon": "document",
+      "domain": "Unstructured data"
+    },
+    {
+      "name": "Imaging / Radiology",
+      "detail": "Images, exams, reports",
+      "icon": "image",
+      "domain": "Unstructured data"
+    }
+  ],
+  "dataDomains": [
+    {
+      "name": "Clinical Data",
+      "icon": "heart",
+      "summary": "Encounters, diagnoses, procedures, orders, medications and results."
+    },
+    {
+      "name": "Operational Data",
+      "icon": "gear",
+      "summary": "Scheduling, throughput, capacity, referrals, utilization and staffing."
+    },
+    {
+      "name": "Financial Data",
+      "icon": "dollar",
+      "summary": "Charges, claims, payments, contract, budget and revenue cycle detail."
+    },
+    {
+      "name": "Master Data",
+      "icon": "people",
+      "summary": "Patient, provider, location, service line, payer and organization dimensions."
+    },
+    {
+      "name": "Documents / Images",
+      "icon": "document",
+      "summary": "Scans, faxes, images, reports, transcripts and generated files."
+    }
+  ],
+  "useCases": [
+    {
+      "id": "post-acquisition-hub",
+      "name": "Post-Acquisition Data Integration Hub",
+      "tag": "Featured onsite demo",
+      "category": "Rapid Insights",
+      "description": "Integrate acquired health-system data and inaccessible financial data into Databricks, standardize key data elements and publish certified metrics for analysis in Sigma.",
+      "prerequisites": [
+        "Core Application System Data",
+        "Certified Metrics",
+        "Normalized Views",
+        "Sigma Computing"
+      ],
+      "optionalPrerequisites": [
+        "Redox Engine",
+        "Streaming Data"
+      ],
+      "complexity": "Medium",
+      "timeline": "Phased pilot, then reusable acquisition pattern",
+      "partners": [
+        "Databricks",
+        "Sigma Computing",
+        "Redox Engine"
+      ],
+      "quantitativeBenefits": [
+        "Days from data-source access to executive KPI availability",
+        "Manual extracts, spreadsheets and duplicate reports retired",
+        "Data-quality defects discovered, remediated and monitored",
+        "Recurring reconciliation hours avoided",
+        "Priority metrics with certified definitions and lineage"
+      ],
+      "qualitativeBenefits": [
+        "Faster leadership visibility after acquisition close",
+        "Consistent definitions across acquired and existing entities",
+        "Confidence in financial, operational and regulatory reporting",
+        "Reusable playbook for future integrations"
+      ],
+      "flow": [
+        "Acquire new sources",
+        "Discover inventory and quality",
+        "Standardize data elements",
+        "Publish certified metric hub",
+        "Analyze in Sigma"
+      ],
+      "demo": "Reserve this space for a Sigma dashboard, architecture walk-through or short video that shows acquisition data moving from source systems into certified metrics."
+    },
+    {
+      "id": "sigma-ai-bi",
+      "name": "Sigma AI Business Intelligence",
+      "tag": "Initial use case",
+      "category": "Rapid Insights",
+      "description": "Use Sigma on top of governed Databricks data products to give executives and analysts a spreadsheet-familiar BI experience with governed metrics and AI-assisted exploration.",
+      "prerequisites": [
+        "Certified Metrics",
+        "Normalized Views",
+        "Core Application System Data"
+      ],
+      "optionalPrerequisites": [
+        "Databricks Genie"
+      ],
+      "complexity": "Low to Medium",
+      "timeline": "Initial dashboard and workbook build",
+      "partners": [
+        "Sigma Computing",
+        "Databricks"
+      ],
+      "quantitativeBenefits": [
+        "Dashboard adoption",
+        "Report build cycle time",
+        "Manual reconciliation hours",
+        "Certified KPIs used"
+      ],
+      "qualitativeBenefits": [
+        "Trusted self-service",
+        "Fewer competing metric definitions",
+        "Faster executive answers"
+      ],
+      "flow": [
+        "Select metrics",
+        "Build governed views",
+        "Publish Sigma workbook",
+        "Enable AI-assisted Q&A"
+      ],
+      "demo": "Demo a finance or operational workbook that drills from a leadership metric into transaction detail."
+    },
+    {
+      "id": "redox-adt",
+      "name": "Redox ADT Integration",
+      "tag": "Initial use case",
+      "category": "Streaming Data",
+      "description": "Stream admissions, discharges and transfers through Redox into the healthcare data platform to support operational visibility and downstream workflow triggers.",
+      "prerequisites": [
+        "Streaming Data",
+        "Interop",
+        "Operational Data"
+      ],
+      "optionalPrerequisites": [
+        "Clinical Command Center"
+      ],
+      "complexity": "Medium",
+      "timeline": "Event integration sprint plus validation",
+      "partners": [
+        "Redox Engine",
+        "Databricks"
+      ],
+      "quantitativeBenefits": [
+        "Event latency",
+        "Coverage of facilities and ADT event types",
+        "Workflow actions triggered",
+        "Exceptions monitored"
+      ],
+      "qualitativeBenefits": [
+        "Current-state patient-flow visibility",
+        "Reduced reliance on lagging daily reports",
+        "Stronger foundation for command-center use cases"
+      ],
+      "flow": [
+        "Connect ADT feed",
+        "Normalize event messages",
+        "Publish event stream",
+        "Trigger operational workflows"
+      ],
+      "demo": "Show a live-style ADT event moving into the platform and updating a patient-flow queue."
+    },
+    {
+      "id": "continuity-of-care",
+      "name": "Continuity of Care Document Processing",
+      "tag": "Initial use case",
+      "category": "Unstructured Data",
+      "description": "Extract clinically relevant facts from scanned and faxed continuity-of-care documents and make them searchable, routable and available to analytics and AI workflows.",
+      "prerequisites": [
+        "Unstructured Data",
+        "Documents / Images",
+        "AI Features"
+      ],
+      "optionalPrerequisites": [
+        "Interop"
+      ],
+      "complexity": "Medium",
+      "timeline": "Document pipeline proof of value",
+      "partners": [
+        "Databricks"
+      ],
+      "quantitativeBenefits": [
+        "Documents processed",
+        "Fields extracted",
+        "Manual review minutes avoided",
+        "Routing accuracy"
+      ],
+      "qualitativeBenefits": [
+        "Less manual search",
+        "Improved care continuity",
+        "Better patient context for downstream tools"
+      ],
+      "flow": [
+        "Ingest document",
+        "Extract entities",
+        "Validate quality",
+        "Route or expose in search"
+      ],
+      "demo": "Show a document summary, extracted fields and the downstream queue or search experience."
+    },
+    {
+      "id": "clinical-command-center",
+      "name": "Clinical Command Center",
+      "tag": "Future use case",
+      "category": "Predictive Analytics",
+      "description": "Combine current operational events, clinical data and forecasts to support enterprise visibility into patient flow, capacity and prioritized interventions.",
+      "prerequisites": [
+        "Core Application System Data",
+        "Streaming Data",
+        "Certified Metrics",
+        "AI Features"
+      ],
+      "optionalPrerequisites": [
+        "Redox Engine",
+        "Databricks Apps"
+      ],
+      "complexity": "High",
+      "timeline": "Multi-domain buildout",
+      "partners": [
+        "Databricks",
+        "Redox Engine"
+      ],
+      "quantitativeBenefits": [
+        "Throughput metrics",
+        "Capacity forecast accuracy",
+        "Discharge readiness signal coverage",
+        "Operational response time"
+      ],
+      "qualitativeBenefits": [
+        "Shared operating picture",
+        "Earlier bottleneck detection",
+        "Improved coordination across care teams"
+      ],
+      "flow": [
+        "Unify patient-flow data",
+        "Stream current events",
+        "Forecast constraints",
+        "Coordinate action"
+      ],
+      "demo": "Optional future-state visualization with alert tiles, census trends and action queues."
+    },
+    {
+      "id": "clinician-scheduling",
+      "name": "Clinician Scheduling Optimization",
+      "tag": "Future use case",
+      "category": "Predictive Analytics",
+      "description": "Use demand, availability, service line patterns and staffing data to improve schedule alignment and reduce manual planning effort.",
+      "prerequisites": [
+        "Core Application System Data",
+        "Forecast / Budget",
+        "Operational Data"
+      ],
+      "optionalPrerequisites": [
+        "AI Features",
+        "Databricks Apps"
+      ],
+      "complexity": "Medium to High",
+      "timeline": "Optimization model and workflow pilot",
+      "partners": [
+        "Databricks"
+      ],
+      "quantitativeBenefits": [
+        "Schedule fill rate",
+        "Manual planning hours",
+        "Utilization variance",
+        "Access or wait-time trend"
+      ],
+      "qualitativeBenefits": [
+        "Better workforce planning",
+        "More transparent tradeoffs",
+        "Reduced ad hoc scheduling burden"
+      ],
+      "flow": [
+        "Profile demand",
+        "Model constraints",
+        "Recommend schedule",
+        "Monitor variance"
+      ],
+      "demo": "Show scenario planning for clinic capacity and staffing options."
+    },
+    {
+      "id": "supply-chain-optimization",
+      "name": "Supply Chain Optimization",
+      "tag": "Future use case",
+      "category": "Predictive Analytics",
+      "description": "Connect clinical demand, inventory, ERP and purchasing data to improve spend visibility, forecast utilization and reduce operational waste.",
+      "prerequisites": [
+        "Core Application System Data",
+        "Financial Data",
+        "Operational Data",
+        "Forecast / Budget"
+      ],
+      "optionalPrerequisites": [
+        "Predictive Analytics"
+      ],
+      "complexity": "Medium",
+      "timeline": "Category-focused pilot",
+      "partners": [
+        "Databricks",
+        "Sigma Computing"
+      ],
+      "quantitativeBenefits": [
+        "Stockout events",
+        "Inventory turns",
+        "Contract compliance",
+        "Spend variance"
+      ],
+      "qualitativeBenefits": [
+        "Clearer demand signals",
+        "Better sourcing decisions",
+        "Improved coordination across finance, supply chain and operations"
+      ],
+      "flow": [
+        "Unify spend and demand",
+        "Analyze variance",
+        "Forecast utilization",
+        "Recommend actions"
+      ],
+      "demo": "Show spend and utilization dashboard with drill-through to item-level detail."
+    },
+    {
+      "id": "patient-engagement-chatbot",
+      "name": "Patient Engagement Chatbot",
+      "tag": "Future use case",
+      "category": "AI and Workflow",
+      "description": "Ground patient-facing or team-facing AI assistants in trusted Parkview content, operational data and workflow context.",
+      "prerequisites": [
+        "Unstructured Data",
+        "AI Features",
+        "Interop",
+        "Normalized Views"
+      ],
+      "optionalPrerequisites": [
+        "Databricks Apps",
+        "Lakebase"
+      ],
+      "complexity": "High",
+      "timeline": "Governed AI pilot after data foundation maturity",
+      "partners": [
+        "Databricks"
+      ],
+      "quantitativeBenefits": [
+        "Containment or deflection rate",
+        "Resolution time",
+        "Escalation quality",
+        "User satisfaction"
+      ],
+      "qualitativeBenefits": [
+        "Consistent patient guidance",
+        "Improved accessibility",
+        "Better handoff to staff when human review is needed"
+      ],
+      "flow": [
+        "Curate knowledge",
+        "Ground responses",
+        "Route exceptions",
+        "Monitor safety and quality"
+      ],
+      "demo": "Show a governed Q&A flow with citations to approved content and escalation guardrails."
+    }
+  ],
+  "narrativePillars": [
+    {
+      "name": "Better Patient Outcomes",
+      "copy": "Connected, trusted data helps leaders prioritize decisions that improve care."
+    },
+    {
+      "name": "Operational Efficiency",
+      "copy": "Reusable services reduce one-off reporting and speed day-to-day action."
+    },
+    {
+      "name": "Financial Performance",
+      "copy": "Standard metrics and transaction detail improve margin, forecasting and risk visibility."
+    },
+    {
+      "name": "Compliance and Trust",
+      "copy": "Governed definitions, quality rules and lineage improve confidence in reporting."
+    },
+    {
+      "name": "Innovation at Scale",
+      "copy": "A data and AI-ready architecture makes new use cases easier to launch and govern."
+    }
+  ],
+  "logoManifest": {
+    "westMonroe": {
+      "local": "assets/logos/west-monroe.svg",
+      "productionUrl": "https://images.contentstack.io/v3/assets/blt88fb2beacdfabc05/blt992fcd4d46de5d6c/66fefa3e9d2dacc683df9ce0/WM-Logo--dark.svg",
+      "alt": "West Monroe"
+    },
+    "databricks": {
+      "local": "assets/logos/databricks.svg",
+      "productionUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Databricks_logo.svg/250px-Databricks_logo.svg.png",
+      "alt": "Databricks"
+    },
+    "sigma": {
+      "local": "assets/logos/sigma.svg",
+      "productionUrl": "https://logo.clearbit.com/sigmacomputing.com",
+      "alt": "Sigma Computing"
+    },
+    "redox": {
+      "local": "assets/logos/redox.svg",
+      "productionUrl": "https://redoxengine.com/wp-content/uploads/2025/05/logo.svg",
+      "alt": "Redox Engine"
+    },
+    "parkview": {
+      "local": "assets/logos/parkview.svg",
+      "productionUrl": "",
+      "alt": "Parkview Health"
+    }
+  },
+  "designTokens": {
+    "name": "Parkview Databricks Microsite v3",
+    "brand": {
+      "westMonroe": {
+        "navy": "#07162F",
+        "ink": "#0B1220",
+        "orange": "#F15A24",
+        "slate": "#43546F"
+      },
+      "databricks": {
+        "orange": "#FF3621"
+      },
+      "parkviewExperience": {
+        "blue": "#0B5FFF",
+        "sky": "#0C7FF2",
+        "lake": "#0FB8C9",
+        "mint": "#3BD6A5"
+      }
+    },
+    "surfaces": {
+      "pageBackground": "linear-gradient(180deg, #FBFCFF 0%, #F4F7FB 46%, #EEF4FB 100%)",
+      "glassCard": "rgba(255,255,255,0.86)",
+      "border": "rgba(17,31,54,0.12)",
+      "shadow": "0 24px 70px rgba(7,22,47,0.14)",
+      "shadowSoft": "0 12px 34px rgba(7,22,47,0.10)"
+    },
+    "typography": {
+      "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif",
+      "headlineTracking": "-0.055em",
+      "bodyLineHeight": 1.5
+    },
+    "radii": {
+      "xl": 32,
+      "lg": 24,
+      "md": 16,
+      "sm": 11
+    },
+    "interaction": {
+      "cardHover": "translateY(-1px), highlight border and shadow",
+      "drawer": "right-side modal drawer with backdrop, keyboard escape, focus on close button",
+      "filters": "aria-pressed buttons; use case cards re-render by prerequisite/outcome"
+    }
+  }
+}

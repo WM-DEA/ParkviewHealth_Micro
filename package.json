@@ -1,0 +1,17 @@
+{
+  "name": "parkview-databricks-microsite-v3",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Static executive microsite prototype for Parkview Health Databricks healthcare data platform onsite.",
+  "scripts": {
+    "start": "python3 -m http.server 8080"
+  },
+  "keywords": [
+    "west-monroe",
+    "parkview",
+    "databricks",
+    "sigma",
+    "redox",
+    "healthcare-data-platform"
+  ]
+}
