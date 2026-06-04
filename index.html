@@ -35,22 +35,75 @@
   <main id="main">
     <section id="overview" class="section hero-section">
       <div class="section-shell hero-shell">
-        <div class="eyebrow-row">
-          <span class="eyebrow">Executive briefing microsite</span>
-          <span class="privacy-pill">Private onsite concept</span>
-        </div>
-        <div class="hero-copy">
-          <h1>Unified Healthcare Data. Intelligent Outcomes.</h1>
-          <p>A modern Databricks-centric healthcare data ecosystem that converts fragmented clinical, operational, financial, streaming, and unstructured data into trusted data products, analytics, predictive intelligence, and AI-enabled workflows.</p>
-        </div>
-        <div class="partner-strip" aria-label="Relevant platform and partner logos">
-          <span class="partner-label">Platform and ecosystem</span>
-          <img src="assets/logos/databricks.svg" alt="Databricks" />
-          <img src="assets/logos/sigma.svg" alt="Sigma Computing" />
-          <img src="assets/logos/redox.svg" alt="Redox Engine" />
+        <div class="hero-stage">
+          <img class="hero-background" src="assets/images/onsite-collaboration.jpg" alt="West Monroe team members collaborating in a briefing room" />
+          <div class="hero-overlay" aria-hidden="true"></div>
+          <div class="hero-content">
+            <div class="eyebrow-row hero-eyebrow-row">
+              <span class="eyebrow">Executive briefing microsite</span>
+              <span class="privacy-pill">Private onsite concept</span>
+            </div>
+            <div class="hero-copy">
+              <h1>Unified healthcare data, ready for decisions.</h1>
+              <p>A clearer executive view of how Parkview turns fragmented healthcare data into trusted products, faster insight, predictive intelligence, and AI-enabled workflow.</p>
+            </div>
+            <div class="hero-command-row">
+              <button class="nav-cta hero-primary-cta" data-scroll-target="featured-use-case">Open demo story</button>
+              <a class="hero-secondary-link" href="#architecture-detail">View platform map</a>
+            </div>
+            <div class="partner-strip" aria-label="Relevant platform and partner logos">
+              <span class="partner-label">Platform and ecosystem</span>
+              <img src="assets/logos/databricks.svg" alt="Databricks" />
+              <img src="assets/logos/sigma.svg" alt="Sigma Computing" />
+              <img src="assets/logos/redox.svg" alt="Redox Engine" />
+            </div>
+          </div>
+
+          <div class="hero-brief" aria-label="Readable platform story at a glance">
+            <div class="brief-header">
+              <span>Readable first page</span>
+              <strong>Three-layer platform story</strong>
+            </div>
+            <div class="brief-flow">
+              <article>
+                <span class="brief-step">01</span>
+                <h2>Data foundations</h2>
+                <p>System, streaming, and unstructured sources organized into a reusable healthcare foundation.</p>
+                <div class="brief-tags"><span>System</span><span>Streaming</span><span>Documents</span></div>
+              </article>
+              <div class="brief-connector" aria-hidden="true"></div>
+              <article>
+                <span class="brief-step">02</span>
+                <h2>Platform products</h2>
+                <p>Certified metrics, normalized views, transaction detail, interop, forecast inputs, and AI features.</p>
+                <div class="brief-tags"><span>Governed</span><span>Reusable</span><span>AI-ready</span></div>
+              </article>
+              <div class="brief-connector" aria-hidden="true"></div>
+              <article>
+                <span class="brief-step">03</span>
+                <h2>Executive outcomes</h2>
+                <p>Rapid insight, predictive analytics, and workflow actions surfaced through the right tools.</p>
+                <div class="brief-tags"><span>Sigma</span><span>Databricks</span><span>Redox</span></div>
+              </article>
+            </div>
+            <div class="brief-outcomes">
+              <div><strong>Faster KPI onboarding</strong><span>for acquired entities and priority initiatives</span></div>
+              <div><strong>Trusted consumption</strong><span>through governed definitions and lineage</span></div>
+              <div><strong>AI at scale</strong><span>with reusable features and workflow context</span></div>
+            </div>
+          </div>
         </div>
 
-        <div class="architecture-board" aria-label="Healthcare data platform architecture overview">
+        <div id="architecture-detail" class="overview-detail">
+          <div class="section-heading two-col-heading architecture-intro">
+            <div>
+              <span class="eyebrow">Detailed platform map</span>
+              <h2>The full architecture now sits below the first page, where it has room to be read.</h2>
+            </div>
+            <p>The first viewport focuses on the executive story. This detailed map remains available for deeper discussion of source systems, Databricks platform services, partner tools, and enabled outcomes.</p>
+          </div>
+
+          <div class="architecture-board" aria-label="Healthcare data platform architecture overview">
           <div class="board-label board-label-left">Foundation<br><span>where data lives today</span></div>
           <div class="board-label board-label-right">Enabled outcomes<br><span>what becomes possible</span></div>
 
@@ -106,14 +159,15 @@
             <article class="outcome-card"><img src="assets/icons/predictive.svg" alt=""/><div><strong>Predictive Analytics</strong><span>Models that anticipate risk, demand, performance, and operational needs.</span></div></article>
             <article class="outcome-card"><img src="assets/icons/workflow.svg" alt=""/><div><strong>AI & Workflow</strong><span>AI-powered actions, copilots, and operational workflows using governed data.</span></div></article>
           </div>
-        </div>
+          </div>
 
-        <div class="hero-outcome-strip" aria-label="Executive benefits">
-          <div><img src="assets/icons/clinical.svg" alt=""/><strong>Better patient outcomes</strong><span>Data-driven signals improve access, coordination, and care.</span></div>
-          <div><img src="assets/icons/operational.svg" alt=""/><strong>Operational efficiency</strong><span>Reusable data products reduce duplicate work.</span></div>
-          <div><img src="assets/icons/financial.svg" alt=""/><strong>Financial performance</strong><span>Consistent KPIs support margin, revenue, and risk visibility.</span></div>
-          <div><img src="assets/icons/security.svg" alt=""/><strong>Compliance and trust</strong><span>Governed data, lineage, and controlled access.</span></div>
-          <div><img src="assets/icons/ai.svg" alt=""/><strong>Innovation at scale</strong><span>Analytics and AI that can move from pilot to production.</span></div>
+          <div class="hero-outcome-strip" aria-label="Executive benefits">
+            <div><img src="assets/icons/clinical.svg" alt=""/><strong>Better patient outcomes</strong><span>Data-driven signals improve access, coordination, and care.</span></div>
+            <div><img src="assets/icons/operational.svg" alt=""/><strong>Operational efficiency</strong><span>Reusable data products reduce duplicate work.</span></div>
+            <div><img src="assets/icons/financial.svg" alt=""/><strong>Financial performance</strong><span>Consistent KPIs support margin, revenue, and risk visibility.</span></div>
+            <div><img src="assets/icons/security.svg" alt=""/><strong>Compliance and trust</strong><span>Governed data, lineage, and controlled access.</span></div>
+            <div><img src="assets/icons/ai.svg" alt=""/><strong>Innovation at scale</strong><span>Analytics and AI that can move from pilot to production.</span></div>
+          </div>
         </div>
       </div>
     </section>
