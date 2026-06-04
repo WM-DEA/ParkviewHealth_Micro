@@ -1,0 +1,27 @@
+{
+  "westMonroe": {
+    "local": "assets/logos/west-monroe.svg",
+    "productionUrl": "https://images.contentstack.io/v3/assets/blt88fb2beacdfabc05/blt992fcd4d46de5d6c/66fefa3e9d2dacc683df9ce0/WM-Logo--dark.svg",
+    "alt": "West Monroe"
+  },
+  "databricks": {
+    "local": "assets/logos/databricks.svg",
+    "productionUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Databricks_logo.svg/250px-Databricks_logo.svg.png",
+    "alt": "Databricks"
+  },
+  "sigma": {
+    "local": "assets/logos/sigma.svg",
+    "productionUrl": "https://logo.clearbit.com/sigmacomputing.com",
+    "alt": "Sigma Computing"
+  },
+  "redox": {
+    "local": "assets/logos/redox.svg",
+    "productionUrl": "https://redoxengine.com/wp-content/uploads/2025/05/logo.svg",
+    "alt": "Redox Engine"
+  },
+  "parkview": {
+    "local": "assets/logos/parkview.svg",
+    "productionUrl": "",
+    "alt": "Parkview Health"
+  }
+}

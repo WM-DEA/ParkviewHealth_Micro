@@ -1,0 +1,43 @@
+{
+  "name": "Parkview Databricks Microsite v3",
+  "brand": {
+    "westMonroe": {
+      "navy": "#07162F",
+      "ink": "#0B1220",
+      "orange": "#F15A24",
+      "slate": "#43546F"
+    },
+    "databricks": {
+      "orange": "#FF3621"
+    },
+    "parkviewExperience": {
+      "blue": "#0B5FFF",
+      "sky": "#0C7FF2",
+      "lake": "#0FB8C9",
+      "mint": "#3BD6A5"
+    }
+  },
+  "surfaces": {
+    "pageBackground": "linear-gradient(180deg, #FBFCFF 0%, #F4F7FB 46%, #EEF4FB 100%)",
+    "glassCard": "rgba(255,255,255,0.86)",
+    "border": "rgba(17,31,54,0.12)",
+    "shadow": "0 24px 70px rgba(7,22,47,0.14)",
+    "shadowSoft": "0 12px 34px rgba(7,22,47,0.10)"
+  },
+  "typography": {
+    "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif",
+    "headlineTracking": "-0.055em",
+    "bodyLineHeight": 1.5
+  },
+  "radii": {
+    "xl": 32,
+    "lg": 24,
+    "md": 16,
+    "sm": 11
+  },
+  "interaction": {
+    "cardHover": "translateY(-1px), highlight border and shadow",
+    "drawer": "right-side modal drawer with backdrop, keyboard escape, focus on close button",
+    "filters": "aria-pressed buttons; use case cards re-render by prerequisite/outcome"
+  }
+}

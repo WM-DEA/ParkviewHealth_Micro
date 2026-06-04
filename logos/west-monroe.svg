@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" role="img" aria-labelledby="wmTitle">
+  <title id="wmTitle">West Monroe</title>
+  <rect width="220" height="48" rx="10" fill="none"/>
+  <g transform="translate(4 5)">
+    <rect x="0" y="0" width="36" height="36" rx="6" fill="#0D1B2A"/>
+    <path d="M7 9l5 18 6-14 6 14 5-18" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M32 6h4v4h-4zM32 14h4v4h-4zM32 22h4v4h-4z" fill="#FF5A1F"/>
+  </g>
+  <text x="50" y="21" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" fill="#0D1B2A" letter-spacing="1.6">WEST</text>
+  <text x="50" y="38" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" fill="#0D1B2A" letter-spacing="1.6">MONROE</text>
+  <rect x="142" y="10" width="2" height="28" rx="1" fill="#D5DFEB"/>
+  <text x="156" y="29" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" fill="#60718A" letter-spacing="1.1">HEALTHCARE</text>
+</svg>

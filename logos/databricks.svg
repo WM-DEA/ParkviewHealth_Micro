@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 54" role="img" aria-labelledby="dbTitle">
+  <title id="dbTitle">Databricks</title>
+  <rect width="230" height="54" rx="10" fill="none"/>
+  <g transform="translate(4 5)" fill="none" stroke="#FF3621" stroke-width="3" stroke-linejoin="round">
+    <path d="M22 2 2 12l20 10 20-10L22 2Z"/>
+    <path d="M2 22l20 10 20-10"/>
+    <path d="M2 32l20 10 20-10"/>
+  </g>
+  <text x="58" y="34" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800" fill="#101828" letter-spacing="-.8">databricks</text>
+</svg>
