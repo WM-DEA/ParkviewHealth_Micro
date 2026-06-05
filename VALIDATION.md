@@ -1,11 +1,11 @@
-# Validation notes
+# Validation checklist
 
-Static checks completed for the packaged prototype:
-
-- Required files are present.
-- JavaScript syntax passes `node --check`.
-- JSON content files parse successfully.
-- Required section anchors are present in `index.html`.
-- Local logo and icon assets are present.
-
-The package is intended as a Codex-ready prototype and design-to-build source. Replace local logo treatments with approved brand assets before production or external distribution.
+- [x] Header uses the provided West Monroe logo file.
+- [x] Parkview wordmark treatment is updated and marked for production replacement with an approved asset.
+- [x] Platform map is reorganized into readable lanes.
+- [x] Certified Metrics, Normalized Views, Transaction Detail, Forecast / Budget Inputs, Interoperability, and Reusable AI Features are separated from Rapid Insights, Predictive Analytics, and AI & Workflow.
+- [x] Foundation cards are full-width and expand inline.
+- [x] Tags are categorized consistently.
+- [x] Use cases include more detail, complexity, benefits, prerequisites, and conceptual solution examples.
+- [x] Enabled analytics sections are full-width and include tools, prerequisites, examples, and visuals.
+- [x] Instructional microsite-build copy has been replaced with finished executive content.

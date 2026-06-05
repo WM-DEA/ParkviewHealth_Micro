@@ -1,15 +1,19 @@
 # Asset notes
 
-This package includes local SVG logo treatments for West Monroe, Parkview Health, Databricks, Sigma Computing, and Redox Engine so the prototype is self-contained and can be used immediately in Codex.
+## West Monroe
 
-Before client-facing deployment, replace these files with brand-approved official assets from the appropriate brand libraries:
+`assets/logos/west-monroe-official.png` is the logo file provided with the request and is used in the header and closing section.
 
-- `assets/logos/west-monroe.svg`
-- `assets/logos/parkview.svg`
-- `assets/logos/databricks.svg`
-- `assets/logos/sigma.svg`
-- `assets/logos/redox.svg`
+## Parkview Health
 
-The current files are vector treatments intended for mockup and site generation. They should be validated against West Monroe and vendor trademark guidelines before production distribution.
+`assets/logos/parkview.svg` is a local vector wordmark treatment based on the public Parkview Health mark. Replace it with client-approved Parkview Health artwork before production deployment.
 
-Icons in `assets/icons/` are original line icons created for this microsite package and may be used as implementation assets.
+The public Parkview site currently includes a Parkview logo in its header/footer navigation, and that public site was used as a reference point for the Parkview lockup direction.
+
+## Vendor logos
+
+The Databricks, Sigma Computing, and Redox Engine logos are local prototype SVG treatments. Replace with approved vendor brand files for client-facing production.
+
+## Icons
+
+Icons are local line-style SVGs intended to support legibility in the platform map and cards. They can be replaced with a licensed icon system if the production implementation uses one.

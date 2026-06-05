@@ -1,43 +1,35 @@
 {
-  "name": "Parkview Databricks Microsite v3",
-  "brand": {
-    "westMonroe": {
-      "navy": "#07162F",
-      "ink": "#0B1220",
-      "orange": "#F15A24",
-      "slate": "#43546F"
-    },
-    "databricks": {
-      "orange": "#FF3621"
-    },
-    "parkviewExperience": {
-      "blue": "#0B5FFF",
-      "sky": "#0C7FF2",
-      "lake": "#0FB8C9",
-      "mint": "#3BD6A5"
-    }
+  "colors": {
+    "wmNavy": "#0b065d",
+    "wmNavy900": "#08033e",
+    "wmInk": "#111827",
+    "wmSlate": "#334155",
+    "wmMuted": "#667085",
+    "wmOrange": "#ff5a1f",
+    "wmBlue": "#175cd3",
+    "wmAqua": "#00a6a6",
+    "wmGreen": "#07896f",
+    "parkviewGreen": "#159447",
+    "parkviewLight": "#8cc63f",
+    "background": "#f7f8fb",
+    "panel": "#ffffff"
   },
-  "surfaces": {
-    "pageBackground": "linear-gradient(180deg, #FBFCFF 0%, #F4F7FB 46%, #EEF4FB 100%)",
-    "glassCard": "rgba(255,255,255,0.86)",
-    "border": "rgba(17,31,54,0.12)",
-    "shadow": "0 24px 70px rgba(7,22,47,0.14)",
-    "shadowSoft": "0 12px 34px rgba(7,22,47,0.10)"
+  "radii": {
+    "small": "12px",
+    "medium": "20px",
+    "large": "30px",
+    "xlarge": "44px"
+  },
+  "shadows": {
+    "small": "0 10px 28px rgba(11, 6, 93, .08)",
+    "medium": "0 22px 58px rgba(11, 6, 93, .14)",
+    "large": "0 36px 86px rgba(8, 3, 62, .24)"
+  },
+  "layout": {
+    "maxWidth": "1500px"
   },
   "typography": {
     "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif",
-    "headlineTracking": "-0.055em",
-    "bodyLineHeight": 1.5
-  },
-  "radii": {
-    "xl": 32,
-    "lg": 24,
-    "md": 16,
-    "sm": 11
-  },
-  "interaction": {
-    "cardHover": "translateY(-1px), highlight border and shadow",
-    "drawer": "right-side modal drawer with backdrop, keyboard escape, focus on close button",
-    "filters": "aria-pressed buttons; use case cards re-render by prerequisite/outcome"
+    "note": "No font files included. Use licensed fonts in production if required."
   }
 }

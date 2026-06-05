@@ -1,65 +1,31 @@
 # Codex build prompt
 
-You are building an executive microsite for a Parkview Health onsite led by West Monroe. Use this package as the source of truth for design direction, content, structure, assets, and interactions.
+Refactor this static prototype into the preferred production frontend stack while preserving the current content hierarchy, visual intent, and interaction behavior.
 
-## Goal
+## Core narrative
 
-Create a polished, responsive microsite that tells the story of a Databricks-centric Healthcare Data Platform. The site should show how foundational healthcare data domains become governed platform data products, which then enable analytics, predictive intelligence, and AI-powered workflows.
+The site should tell a five-lane platform story:
 
-## Primary audience
+1. **Source systems**: EHR, scheduling, referrals, pharmacy/lab, finance, ERP/supply chain, integration engine, IoT/device data, scanning/faxing/imaging.
+2. **Data platform foundations**: Core Application System Data, Streaming Data, and Unstructured Data.
+3. **Databricks Healthcare Data Platform**: the governed, secure, scalable, AI-ready platform core.
+4. **Consumption layer & platform capabilities**: Certified Metrics, Normalized Views, Transaction Detail, Forecast / Budget Inputs, Interoperability, and Reusable AI Features.
+5. **Enabled analytics outcomes**: Rapid Insights, Predictive Analytics, and AI & Workflow.
 
-Parkview Health executives and technology / analytics leaders. Tone should be executive-facing, practical, and confident. Avoid overly technical copy unless it is in a detail drawer, demo panel, or implementation section.
+Do not rename the middle layer to “data products.” The items in that layer should be treated as consumption-layer features and platform capabilities that make analytics trustworthy, reusable, and scalable.
 
-## Required pages or sections
+## Required interactions
 
-1. Executive Overview
-   - Show foundation systems on the left.
-   - Show Databricks Healthcare Data Platform at the core.
-   - Show platform data products/services as a distinct middle-right layer: Certified Metrics, Normalized Views, Forecast / Budget, Interop, Transaction Detail, Reusable AI Features.
-   - Show enabled analytics outcomes as the far-right layer: Rapid Insights, Predictive Analytics, AI & Workflow.
-   - Do not visually conflate platform data products with analytics outcomes.
+- Sticky header navigation with active section state.
+- Smooth scroll to sections and featured demo.
+- Expand/collapse detail panels for foundation components.
+- Filter use cases by foundation, outcome, and partner relevance.
+- Slide-out use-case detail panel with prerequisites, benefits, complexity drivers, and conceptual solution sketch.
+- Clickable acquisition demo tabs for source onboarding, quality profile, semantic alignment, certified metric hub, and Sigma executive workbook.
 
-2. Data Platform Foundations
-   - Core Application System Data
-   - Streaming Data, with Redox Engine partner callout
-   - Unstructured Data
-   - Cards must be useful when collapsed and richer when expanded.
-   - Include visible data-type badges.
+## Brand and assets
 
-3. Platform Data Products
-   - Certified Metrics
-   - Normalized Views
-   - Forecast / Budget
-   - Interop
-   - Transaction Detail
-   - Reusable AI Features
-
-4. Use Case Library
-   - Filterable by foundation prerequisite and outcome family.
-   - Each use case should show description, prerequisites, complexity, benefits to validate, and relevant partners/tools.
-
-5. Featured Use Case
-   - Post-Acquisition Data Integration Hub
-   - Make it easily accessible from the Core System Data card and the Use Case Library.
-   - Include Databricks, Sigma Computing, and Redox Engine branding.
-   - Reserve space for a Sigma workbook or demo embed.
-   - Flow: acquire sources -> discover inventory and quality -> standardize key elements -> publish certified metrics -> analyze in Sigma.
-
-6. Analytics and Intelligence
-   - Rapid Insights: Sigma Computing, Databricks SQL, Databricks Genie, Databricks Apps.
-   - Predictive Analytics: Databricks Lakehouse AI, MLflow, Feature Store, Model Serving.
-   - AI & Workflow: Databricks Apps, Databricks Lakebase, Redox Engine, Sigma AI Apps.
-
-## Implementation expectations
-
-- Use accessible semantic HTML.
-- Make interactions keyboard-friendly.
-- Use local SVG assets from `assets/logos` and `assets/icons` unless approved brand assets are provided.
-- Use CSS variables from `styles.css` as starting brand tokens.
-- Add route or anchor deep links for every major section and use case.
-- Keep animations tasteful and support `prefers-reduced-motion`.
-- Ensure the site works on executive briefing room displays and mobile.
-
-## Deliverable
-
-Convert this prototype into a maintainable production-ready app using the chosen project stack. If no stack is specified, a Vite + React implementation with content-driven components is recommended.
+- Preserve West Monroe branding from `assets/logos/west-monroe-official.png`.
+- Replace `assets/logos/parkview.svg` with an approved Parkview Health logo before production deployment.
+- Replace prototype vendor logo SVGs with approved Databricks, Sigma Computing, and Redox Engine assets if available.
+- Do not add font files; use system or licensed web fonts based on production standards.
