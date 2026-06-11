@@ -1,28 +1,216 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Capacity Command — Hospital Operations Prototype</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/index-DfXCYdod.css">
-    <style>
-      button[aria-label="Open Simulation Control"]{display:none !important}
-      #wm-credit{position:fixed;left:10px;bottom:9px;z-index:2147483000;pointer-events:none;
-        font-family:'Inter',system-ui,sans-serif;font-size:11px;line-height:1.3;color:#5b6b86;
-        background:rgba(255,255,255,.78);border:1px solid rgba(80,101,142,.22);border-radius:7px;
-        padding:5px 9px;backdrop-filter:blur(4px);max-width:340px}
-      #wm-credit b{color:#070154;font-weight:600}
-    </style>
-    <!-- classic script: runs before the deferred module so window.fetch is patched first -->
-    <script src="mock-api.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Operations Command Center</title>
+    <link rel="stylesheet" href="assets/command-center-static.css">
   </head>
   <body>
-    <div id="root"></div>
-    <div id="wm-credit">Prototype &middot; application by <b>Mobeen Vaid</b> &middot; packaged as a standalone demo by <b>West Monroe</b></div>
-    <script type="module" src="assets/index-CWPB_tyE-rt2.js"></script>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <span class="eyebrow">Databricks App Demo</span>
+          <h1>Hospital Operations Command Center</h1>
+          <p>Live bed, ED, OR, discharge, and forecast signals in one operating view.</p>
+        </div>
+        <div class="status-cluster" aria-label="Current command center status">
+          <div class="status-pill constrained">Constrained</div>
+          <div class="status-pill live">Live prototype</div>
+          <div class="clock" id="clock">--:--:--</div>
+        </div>
+      </header>
+
+      <nav class="view-tabs" aria-label="Demo views">
+        <button class="tab-button is-active" type="button" data-tab="dashboard">Dashboard</button>
+        <button class="tab-button" type="button" data-tab="flow">Data Flow</button>
+        <button class="tab-button" type="button" data-tab="guide">Executive Narrative</button>
+      </nav>
+
+      <main>
+        <section class="view-panel is-active" data-panel="dashboard">
+          <section class="metric-grid" aria-label="Hospital operating metrics">
+            <article class="metric-card">
+              <span>Total Census</span>
+              <strong id="totalCensus">224</strong>
+              <em>87.2% occupied</em>
+            </article>
+            <article class="metric-card warning">
+              <span>ED Waiting</span>
+              <strong id="edWaiting">18</strong>
+              <em>+4 from baseline</em>
+            </article>
+            <article class="metric-card critical">
+              <span>ED Boarders</span>
+              <strong id="edBoarders">7</strong>
+              <em>ICU pressure rising</em>
+            </article>
+            <article class="metric-card">
+              <span>Avg Wait</span>
+              <strong id="avgWait">42</strong>
+              <em>minutes</em>
+            </article>
+            <article class="metric-card good">
+              <span>Beds Available</span>
+              <strong id="bedsAvailable">21</strong>
+              <em>9 clean-ready soon</em>
+            </article>
+            <article class="metric-card">
+              <span>OR Active</span>
+              <strong id="orActive">6 / 8</strong>
+              <em>next room in 35 min</em>
+            </article>
+          </section>
+
+          <section class="dashboard-grid">
+            <article class="ops-panel unit-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">Capacity by unit</span>
+                  <h2>Bed Management</h2>
+                </div>
+                <button class="text-action" type="button" id="simulateSurge">Simulate surge</button>
+              </div>
+              <div class="unit-list" id="unitList"></div>
+            </article>
+
+            <article class="ops-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">Selected unit</span>
+                  <h2 id="selectedUnitTitle">Emergency Department</h2>
+                </div>
+                <span class="severity-badge warning" id="selectedSeverity">Warning</span>
+              </div>
+              <div class="selected-grid">
+                <div>
+                  <span>Available</span>
+                  <strong id="selectedAvailable">2</strong>
+                </div>
+                <div>
+                  <span>Cleaning</span>
+                  <strong id="selectedCleaning">4</strong>
+                </div>
+                <div>
+                  <span>Blocked</span>
+                  <strong id="selectedBlocked">1</strong>
+                </div>
+                <div>
+                  <span>Predicted 2h</span>
+                  <strong id="selectedForecast">3</strong>
+                </div>
+              </div>
+              <div class="action-row">
+                <button class="primary-action" type="button" id="readyBed">Mark bed ready</button>
+                <button class="secondary-action" type="button" id="openEscalation">Open escalation</button>
+              </div>
+              <p class="operator-note" id="operatorNote">ED boarding risk is elevated. Prioritize ICU and telemetry turnover before the next arrival wave.</p>
+            </article>
+
+            <article class="ops-panel forecast-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">Short-horizon forecast</span>
+                  <h2>Demand and Discharge Outlook</h2>
+                </div>
+                <span class="confidence">82% confidence</span>
+              </div>
+              <div class="forecast-bars" id="forecastBars"></div>
+            </article>
+
+            <article class="ops-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">Event stream</span>
+                  <h2>Live Operating Signals</h2>
+                </div>
+                <span class="refresh-chip">4s stale</span>
+              </div>
+              <div class="event-list" id="eventList"></div>
+            </article>
+          </section>
+        </section>
+
+        <section class="view-panel" data-panel="flow">
+          <section class="flow-layout">
+            <article class="flow-step">
+              <span>01</span>
+              <h2>Source Signals</h2>
+              <p>ADT, bed board, ED, OR, discharge, staffing, and location signals stream from operational systems.</p>
+            </article>
+            <article class="flow-step">
+              <span>02</span>
+              <h2>Lakehouse Foundation</h2>
+              <p>Clinical, operational, and event data is normalized into governed data products with lineage.</p>
+            </article>
+            <article class="flow-step">
+              <span>03</span>
+              <h2>Forecast Features</h2>
+              <p>Arrival, discharge, acuity, bottleneck, and capacity features feed short-horizon models.</p>
+            </article>
+            <article class="flow-step">
+              <span>04</span>
+              <h2>Operational Store</h2>
+              <p>Curated signals sync into a low-latency serving layer for command-center workflows.</p>
+            </article>
+            <article class="flow-step">
+              <span>05</span>
+              <h2>Action Surface</h2>
+              <p>Leaders see current state, forecast risk, and operator-owned recommendations in one interface.</p>
+            </article>
+          </section>
+          <section class="ops-panel architecture-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="eyebrow">Governed platform pattern</span>
+                <h2>Databricks-enabled operating model</h2>
+              </div>
+            </div>
+            <div class="architecture-grid">
+              <div><strong>Data quality</strong><span>Streaming checks, freshness thresholds, anomaly detection</span></div>
+              <div><strong>Governance</strong><span>Shared catalog, role-based access, audit-ready lineage</span></div>
+              <div><strong>Serving</strong><span>Low-latency app data for dashboards and writeback queues</span></div>
+              <div><strong>AI workflow</strong><span>Forecasts and recommendations stay human-reviewed</span></div>
+            </div>
+          </section>
+        </section>
+
+        <section class="view-panel" data-panel="guide">
+          <section class="narrative-grid">
+            <article class="narrative-panel">
+              <span class="eyebrow">Business problem</span>
+              <h2>Capacity decisions are faster than the reporting cycle.</h2>
+              <p>Hospital leaders often reconcile bed board, ED, OR, staffing, and discharge context manually. The command center turns those fragmented signals into a shared, near-real-time operating picture.</p>
+            </article>
+            <article class="narrative-panel">
+              <span class="eyebrow">Target audience</span>
+              <h2>Clinical operations, nursing, ED, perioperative, and executive leadership.</h2>
+              <p>The app supports huddle preparation, surge response, throughput monitoring, discharge coordination, and escalation management.</p>
+            </article>
+            <article class="narrative-panel">
+              <span class="eyebrow">Platform value</span>
+              <h2>One governed data path for analytics and operational action.</h2>
+              <p>Databricks provides the foundation for streaming data, curated features, model-ready forecasting, and consistent governance across the command-center workflow.</p>
+            </article>
+          </section>
+          <section class="ops-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="eyebrow">Illustrative outcomes</span>
+                <h2>What Parkview could improve</h2>
+              </div>
+            </div>
+            <div class="outcome-list">
+              <div><strong>Earlier bottleneck detection</strong><span>Surface ED boarding and ICU constraint signals before escalation.</span></div>
+              <div><strong>More coordinated flow decisions</strong><span>Give nursing, bed management, ED, and OR teams the same operating picture.</span></div>
+              <div><strong>Better discharge readiness visibility</strong><span>Forecast near-term discharge capacity and prioritize turnarounds.</span></div>
+              <div><strong>Reusable operational pattern</strong><span>Apply the same data-to-app foundation to staffing, supply, and access workflows.</span></div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script defer src="assets/command-center-static.js"></script>
   </body>
 </html>
