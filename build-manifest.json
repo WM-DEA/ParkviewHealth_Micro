@@ -1,5 +1,5 @@
 {
-  "artifact": "parkview-databricks-microsite-codex-ready",
+  "artifact": "parkviewhealth-microsite-content-demos-updated",
   "createdFor": "Parkview Health onsite briefing",
   "createdBy": "West Monroe microsite concept",
   "stack": "static HTML/CSS/JS prototype; recommended conversion to Vite + React if productionizing",
@@ -15,19 +15,25 @@
     "design-tokens.json",
     "assets/logo-manifest.json",
     "docs/finished-product-detail-spec.md",
-    "VALIDATION.md"
+    "VALIDATION.md",
+    "docs/update-notes-2026-06-11.md",
+    "demos/",
+    "assets/demos/shots/"
   ],
   "mustPreserve": [
-    "separation of platform data products from analytics outcomes",
+    "separation of consumption-layer/platform capabilities from enabled analytics outcomes",
     "featured Post-Acquisition Data Integration Hub use case",
-    "Redox Engine callout for streaming data",
-    "Sigma callout for rapid insights and featured demo",
-    "West Monroe branding on header and footer"
+    "Redox Engine callout for streaming data where relevant",
+    "Sigma callout for rapid insights and featured acquisition use case",
+    "West Monroe branding on header and footer",
+    "Databricks App Demos section with only Provider demos"
   ],
   "qualityNotes": [
     "static HTML/CSS/JS package",
     "JS syntax validated with node --check",
-    "JSON content validated",
-    "local logos are treatments; use manifest URLs or approved brand libraries for production"
-  ]
+    "local asset path check completed for HTML, images, links, scripts, stylesheets, and iframes",
+    "provider demo bundles copied from supplied healthcare AI microsite and patched to relative paths",
+    "local logos are prototype assets unless separately approved for client-facing deployment"
+  ],
+  "updated": "2026-06-11"
 }

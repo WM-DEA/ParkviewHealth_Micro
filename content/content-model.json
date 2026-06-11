@@ -1,5 +1,5 @@
 {
-  "content_model_version": "refined-2026-06-04",
+  "content_model_version": "refined-2026-06-11-provider-demos",
   "sections": [
     {
       "id": "overview",
@@ -24,6 +24,10 @@
     {
       "id": "featured-use-case",
       "purpose": "Post-Acquisition Data Integration Hub demo storyboard"
+    },
+    {
+      "id": "databricks-demos",
+      "purpose": "Provider-only Databricks App demo gallery with iframe modal and links to static prototype bundles"
     },
     {
       "id": "analytics",
@@ -71,5 +75,19 @@
       "Predictive Analytics",
       "AI & Workflow"
     ]
+  },
+  "demo_model": {
+    "filter": "Provider demos only",
+    "fields": [
+      "id",
+      "title",
+      "src",
+      "screenshot",
+      "providerAudience",
+      "summary",
+      "tools",
+      "illustrativeValue"
+    ],
+    "interaction": "Cards open an iframe modal; each card also links to a standalone prototype in a new tab."
   }
 }

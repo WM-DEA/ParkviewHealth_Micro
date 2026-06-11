@@ -1,9 +1,9 @@
 {
   "title": "Parkview Health Databricks Healthcare Data Platform Executive Briefing",
   "hero": {
-    "eyebrow": "Executive briefing microsite",
+    "eyebrow": "Onsite Data Workshop",
     "headline": "Unified healthcare data, ready for decisions.",
-    "lede": "A polished executive view of how Parkview can turn fragmented healthcare data into governed insight, predictive intelligence, and AI-enabled workflow through a modern Databricks-centered platform.",
+    "lede": "Turning Parkview\u2019s enterprise data into governed insight, predictive intelligence, and AI-enabled workflow through a modern Databricks-centered platform.",
     "story_layers": [
       {
         "step": "01",
@@ -59,6 +59,13 @@
       "Rapid Insights",
       "Predictive Analytics",
       "AI & Workflow"
+    ],
+    "headline": "A platform-centric architecture accelerates innovation while strengthening enterprise-wide data & AI governance.",
+    "core_domains": [
+      "Clinical",
+      "Operational",
+      "Financial",
+      "Documents"
     ]
   },
   "foundations": [
@@ -216,6 +223,115 @@
         "Unstructured Data",
         "Reusable AI Features",
         "Security and audit controls"
+      ]
+    }
+  ],
+  "navigation": [
+    "Overview",
+    "Platform map",
+    "Foundations",
+    "Capabilities",
+    "Use cases",
+    "Demos",
+    "Analytics"
+  ],
+  "demos": [
+    {
+      "id": "ambient",
+      "title": "Ambient Clinical Documentation",
+      "src": "demos/ambient-clinical-documentation/index.html",
+      "screenshot": "assets/demos/shots/ambient-clinical-documentation.png",
+      "providerAudience": "physicians, APPs, and clinical informatics",
+      "summary": "Turns a visit conversation into a sourced draft note, suggests supported E&M and diagnosis codes, and keeps clinician attestation at the center of the workflow.",
+      "tools": [
+        "Databricks Apps",
+        "Document Intelligence",
+        "ML",
+        "AI/BI"
+      ]
+    },
+    {
+      "id": "coding",
+      "title": "Clinical Coding & CDI Copilot",
+      "src": "demos/clinical-coding-cdi/index.html",
+      "screenshot": "assets/demos/shots/clinical-coding-cdi.png",
+      "providerAudience": "inpatient coders and CDI specialists",
+      "summary": "Abstracts charts into supported codes, surfaces compliant CDI opportunities, and models DRG and reimbursement impact before coder attestation.",
+      "tools": [
+        "Databricks Apps",
+        "Genie",
+        "ML",
+        "Document Intelligence"
+      ]
+    },
+    {
+      "id": "prior-auth",
+      "title": "Prior Authorization Automation",
+      "src": "demos/prior-authorization-automation/index.html",
+      "screenshot": "assets/demos/shots/prior-authorization-automation.png",
+      "providerAudience": "prior-auth coordinators and UM nurses",
+      "summary": "Checks whether authorization is required, maps clinical evidence to payer criteria, flags missing documentation, and assembles a staff-reviewed submission packet.",
+      "tools": [
+        "Databricks Apps",
+        "Genie",
+        "Document Intelligence",
+        "External APIs"
+      ]
+    },
+    {
+      "id": "denials",
+      "title": "Denial Management & Appeals",
+      "src": "demos/denial-management-appeals/index.html",
+      "screenshot": "assets/demos/shots/denial-management-appeals.png",
+      "providerAudience": "denials and AR specialists",
+      "summary": "Ranks denials by recoverable value and overturn likelihood, root-causes each event, and drafts evidence-backed appeal content for specialist review.",
+      "tools": [
+        "Databricks Apps",
+        "Genie",
+        "ML",
+        "AI/BI"
+      ]
+    },
+    {
+      "id": "referral",
+      "title": "Patient Access & Referral Leakage",
+      "src": "demos/patient-access-referral/index.html",
+      "screenshot": "assets/demos/shots/patient-access-referral.png",
+      "providerAudience": "patient access and referral coordinators",
+      "summary": "Ranks referrals by leakage risk and value, verifies eligibility, estimates patient cost, and helps staff match patients to the right in-network slot.",
+      "tools": [
+        "Databricks Apps",
+        "Genie",
+        "AI/BI",
+        "External APIs"
+      ]
+    },
+    {
+      "id": "capacity",
+      "title": "Hospital Operations Command Center",
+      "src": "demos/hospital-capacity-command/index.html",
+      "screenshot": "assets/demos/shots/hospital-capacity-command.png",
+      "providerAudience": "house supervisors, bed managers, and ED / OR charge nurses",
+      "summary": "Unifies bed, ED, OR, and discharge signals into a current operating view with short-horizon forecasts and operator-owned capacity recommendations.",
+      "tools": [
+        "Databricks Apps",
+        "Lakebase",
+        "Model Serving",
+        "Genie"
+      ]
+    },
+    {
+      "id": "eye-care",
+      "title": "Multi-Site Eye-Care Performance Analytics",
+      "src": "demos/optical-retail-performance-analytics/index.html",
+      "screenshot": "assets/demos/shots/optical-retail-performance-analytics.png",
+      "providerAudience": "smaller and specialty provider groups",
+      "summary": "Rolls site, region, and group performance into one view, pinpoints volume and provider-capacity gaps, and ranks next-best actions by opportunity.",
+      "tools": [
+        "Databricks Apps",
+        "AI/BI",
+        "ML",
+        "Genie"
       ]
     }
   ]

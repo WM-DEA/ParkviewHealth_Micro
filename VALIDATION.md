@@ -9,3 +9,12 @@
 - [x] Use cases include more detail, complexity, benefits, prerequisites, and conceptual solution examples.
 - [x] Enabled analytics sections are full-width and include tools, prerequisites, examples, and visuals.
 - [x] Instructional microsite-build copy has been replaced with finished executive content.
+
+## June 2026 update validation
+
+Completed after applying content feedback and adding Provider Databricks App Demos:
+
+- `node --check assets/js/main.js` passed.
+- `python -m json.tool` passed for `build-manifest.json`, `content/site-content.json`, and `content/content-model.json`.
+- Local asset path check passed for `index.html` and all copied provider demo `index.html` files.
+- Local HTTP smoke test returned 200 for the root index, an embedded provider demo, a provider demo screenshot, and the Hospital Operations Command Center mock API file.

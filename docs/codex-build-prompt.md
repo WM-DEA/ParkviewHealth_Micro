@@ -29,3 +29,7 @@ Do not rename the middle layer to “data products.” The items in that layer s
 - Replace `assets/logos/parkview.svg` with an approved Parkview Health logo before production deployment.
 - Replace prototype vendor logo SVGs with approved Databricks, Sigma Computing, and Redox Engine assets if available.
 - Do not add font files; use system or licensed web fonts based on production standards.
+
+## New implementation requirement: Databricks App Demos
+
+Preserve the new `#databricks-demos` section and quick-jump navigation. The section must include only Provider demos from the supplied healthcare AI microsite. Keep the iframe modal behavior or convert it to a React modal component with the same behavior. Do not add Payer or Life Sciences demos unless explicitly requested.

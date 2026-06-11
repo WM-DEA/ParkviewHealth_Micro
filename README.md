@@ -29,3 +29,7 @@ Then open `http://localhost:8080`.
 - Replace `assets/logos/parkview.svg` with Parkview-approved brand artwork before client-facing distribution.
 - Vendor logo files are prototype-safe local SVG treatments. Replace with approved Databricks, Sigma Computing, and Redox Engine assets if this becomes a production artifact.
 - No font files are included. The prototype uses system fonts for portability.
+
+## June 2026 update: Content review + provider demo integration
+
+This version applies the submitted content-review workbook updates and adds a new **Databricks App Demos** section using only Provider demos from the supplied healthcare AI microsite. See `docs/update-notes-2026-06-11.md` for details.
