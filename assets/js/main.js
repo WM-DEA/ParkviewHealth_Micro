@@ -6,7 +6,7 @@ const useCaseDetails = {
     what: "A repeatable integration pattern for bringing acquired clinical, financial, operational, and master data into Databricks, assessing quality, aligning definitions, and publishing certified metrics for executive consumption.",
     solution: ["Acquired EHR / finance", "Databricks quality profile", "Certified metrics", "Sigma workbook"],
     prerequisites: ["Core Application System Data", "Certified Metrics", "Normalized Views", "Transaction Detail", "Data quality rules", "Security and stewardship"],
-    benefits: ["Faster KPI onboarding for acquired entities", "Reduced reconciliation and report rework", "Earlier visibility into data quality risks", "Consistent board and executive reporting", "Reusable playbook for future transactions"],
+    benefits: ["25-40% faster KPI onboarding for acquired entities (directional estimate)", "20-35% less reconciliation and report rework (directional estimate)", "Earlier visibility into data quality risks", "Consistent board and executive reporting", "Reusable playbook for future transactions"],
     complexityDrivers: ["Source data dictionary coverage", "Patient / provider identity resolution", "Finance definition alignment", "Stewardship ownership and access model"],
     partners: ["Databricks", "Sigma Computing", "Redox Engine where event feeds are in scope"]
   },
@@ -150,7 +150,7 @@ function openCase(id) {
     <p>${detail.what}</p>
     <div class="panel-visual">${miniSolutionHtml(detail.solution)}</div>
     <div class="panel-section"><strong>Prerequisites</strong><div class="mini-tags">${detail.prerequisites.map(x => `<span>${x}</span>`).join('')}</div></div>
-    <div class="panel-section"><strong>Benefits to validate</strong><ul>${detail.benefits.map(x => `<li>${x}</li>`).join('')}</ul></div>
+    <div class="panel-section"><strong>Expected benefits</strong><ul>${detail.benefits.map(x => `<li>${x}</li>`).join('')}</ul></div>
     <div class="panel-section"><strong>Complexity</strong><p>${detail.complexity}</p><ul>${detail.complexityDrivers.map(x => `<li>${x}</li>`).join('')}</ul></div>
     <div class="panel-section"><strong>Relevant partners / tools</strong><div class="mini-tags">${detail.partners.map(x => `<span>${x}</span>`).join('')}</div></div>
   `;
@@ -200,3 +200,44 @@ sections.forEach(section => sectionObserver.observe(section));
   const match = location.hash.match(/^#use-case-(.+)$/);
   if (match) window.setTimeout(() => openCase(match[1]), 350);
 })();
+
+
+// Provider Databricks App Demo modal
+const demoModal = qs('#demoModal');
+const demoFrame = qs('#demoModalFrame');
+const demoTitle = qs('#demoModalTitle');
+const demoNewTab = qs('#demoModalNewTab');
+
+function openDemo(cardOrButton) {
+  const card = cardOrButton.closest('.demo-card');
+  if (!card || !demoModal || !demoFrame || !demoTitle || !demoNewTab) return;
+  const title = qs('h3', card)?.textContent?.trim() || 'Databricks App Demo';
+  const src = card.dataset.demoSrc;
+  if (!src) return;
+  demoTitle.textContent = title;
+  demoFrame.src = src;
+  demoNewTab.href = src;
+  demoModal.hidden = false;
+  demoModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+}
+
+function closeDemo() {
+  if (!demoModal || !demoFrame) return;
+  demoModal.hidden = true;
+  demoModal.setAttribute('aria-hidden', 'true');
+  demoFrame.src = 'about:blank';
+  document.body.classList.remove('modal-open');
+}
+
+qsa('[data-open-demo]').forEach(button => {
+  button.addEventListener('click', event => {
+    event.preventDefault();
+    openDemo(button);
+  });
+});
+qsa('.demo-card').forEach(card => {
+  card.addEventListener('dblclick', () => openDemo(card));
+});
+qsa('[data-close-demo]').forEach(control => control.addEventListener('click', closeDemo));
+document.addEventListener('keydown', event => { if (event.key === 'Escape') closeDemo(); });

@@ -34,3 +34,24 @@ The Post-Acquisition Data Integration Hub is the anchor demo. The demo tab seque
 ## Enabled analytics
 
 Rapid Insights, Predictive Analytics, and AI & Workflow are full-width sections with tools, platform needs, example use cases, and conceptual visuals.
+
+## Databricks App Demos
+
+A new `#databricks-demos` section is included in the sticky navigation and the header quick-jump button.
+
+Behavior:
+- Demo cards show provider-focused Databricks App prototype content only.
+- Each card includes a screenshot, use-case framing, role/purpose summary, workflow bullets, illustrative value statement, and two actions.
+- `Open demo` opens an iframe modal on the current page.
+- `New tab` opens the same static prototype bundle directly.
+- Escape key and close controls close the modal.
+- Demo iframe source is cleared on close to stop app state/audio/network activity.
+
+Integrated provider demos:
+- Ambient Clinical Documentation
+- Clinical Coding & CDI Copilot
+- Prior Authorization Automation
+- Denial Management & Appeals
+- Patient Access & Referral Leakage
+- Hospital Operations Command Center
+- Multi-Site Eye-Care Performance Analytics
