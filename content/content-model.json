@@ -32,6 +32,10 @@
     {
       "id": "analytics",
       "purpose": "Full-width enabled analytics outcome stories"
+    },
+    {
+      "id": "featured_acquisition_story_content",
+      "purpose": "Content model record for acquisition story tab labels and bottom cards"
     }
   ],
   "tag_types": {
@@ -89,5 +93,48 @@
       "illustrativeValue"
     ],
     "interaction": "Cards open an iframe modal; each card also links to a standalone prototype in a new tab."
+  },
+  "icon_taxonomy": {
+    "rule": "Use the same icon file every time the same source, foundation, platform capability, or enabled outcome is referenced.",
+    "source_systems": {
+      "Integration Engine": "assets/icons/router.svg",
+      "Connected / IoT Devices": "assets/icons/iot-devices.svg",
+      "Scheduling & Referrals": "assets/icons/calendar.svg",
+      "Electronic Health Record": "assets/icons/clinical.svg",
+      "Pharmacy / Laboratory": "assets/icons/lab.svg",
+      "Financial Management": "assets/icons/financial.svg",
+      "ERP / Supply Chain": "assets/icons/warehouse.svg",
+      "Scanning / Faxing / Imaging": "assets/icons/documents.svg"
+    },
+    "foundations": {
+      "Core Application System Data": "assets/icons/warehouse.svg",
+      "Streaming Data": "assets/icons/event-stream.svg",
+      "Unstructured Data": "assets/icons/documents.svg"
+    },
+    "consumption_layer_and_platform_capabilities": {
+      "Certified Metrics": "assets/icons/certified.svg",
+      "Normalized Views": "assets/icons/views.svg",
+      "Transaction Detail": "assets/icons/transaction.svg",
+      "Forecast / Budget Inputs": "assets/icons/forecast.svg",
+      "Interoperability": "assets/icons/interoperability.svg",
+      "Reusable AI Features": "assets/icons/model-features.svg"
+    },
+    "enabled_outcomes": {
+      "Rapid Insights": "assets/icons/rapid.svg",
+      "Predictive Analytics": "assets/icons/predictive.svg",
+      "AI & Workflow": "assets/icons/workflow.svg"
+    }
+  },
+  "use_case_model": {
+    "fields": [
+      "id",
+      "title",
+      "tags",
+      "summary",
+      "solution_sketch",
+      "expected_benefits",
+      "complexity"
+    ],
+    "note": "Use-case card tags must use the typed tag taxonomy and avoid partner tags unless a partner is explicitly relevant to the use case."
   }
 }

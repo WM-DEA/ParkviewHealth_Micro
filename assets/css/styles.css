@@ -1334,3 +1334,56 @@ body.modal-open { overflow: hidden; }
 @media print {
   .demo-modal { display: none !important; }
 }
+
+/* Feedback pass: consistent icon usage and revised acquisition-hub visuals */
+.extended-sources span {
+  min-height: 48px;
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 1.2;
+}
+.source-hub-flow {
+  grid-template-columns: minmax(0, 1.25fr) 54px minmax(260px, .9fr);
+}
+.source-mosaic {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.source-mosaic span,
+.source-hub-flow strong {
+  min-height: 92px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid #dbe3ef;
+  background: #f8fafc;
+  font-weight: 850;
+}
+.source-mosaic span:first-child {
+  grid-column: 1 / -1;
+  min-height: 78px;
+  background: #eef4ff;
+  color: var(--wm-navy);
+}
+.source-hub-flow strong {
+  background: #eef4ff;
+  color: var(--wm-navy);
+}
+.story-bottom-grid.two-card-grid {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
+}
+@media (max-width: 980px) {
+  .source-hub-flow,
+  .story-bottom-grid.two-card-grid {
+    grid-template-columns: 1fr;
+  }
+  .source-mosaic {
+    grid-template-columns: 1fr;
+  }
+  .source-mosaic span:first-child {
+    grid-column: auto;
+  }
+}

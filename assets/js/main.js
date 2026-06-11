@@ -4,7 +4,7 @@ const useCaseDetails = {
     outcome: "Rapid Insights",
     complexity: "Medium",
     what: "A repeatable integration pattern for bringing acquired clinical, financial, operational, and master data into Databricks, assessing quality, aligning definitions, and publishing certified metrics for executive consumption.",
-    solution: ["Acquired EHR / finance", "Databricks quality profile", "Certified metrics", "Sigma workbook"],
+    solution: ["Parkview EHR", "Acquired EHR(s)", "Finance System(s)", "Supply Chain System(s)", "Workforce System(s)", "Integration Hub", "Certified metrics", "Sigma workbook"],
     prerequisites: ["Core Application System Data", "Certified Metrics", "Normalized Views", "Transaction Detail", "Data quality rules", "Security and stewardship"],
     benefits: ["25-40% faster KPI onboarding for acquired entities (directional estimate)", "20-35% less reconciliation and report rework (directional estimate)", "Earlier visibility into data quality risks", "Consistent board and executive reporting", "Reusable playbook for future transactions"],
     complexityDrivers: ["Source data dictionary coverage", "Patient / provider identity resolution", "Finance definition alignment", "Stewardship ownership and access model"],
@@ -52,7 +52,7 @@ const useCaseDetails = {
     prerequisites: ["Core system data", "Streaming Data", "Certified operational metrics", "Forecast / Budget inputs", "Operational governance"],
     benefits: ["Earlier bottleneck detection", "Better discharge readiness visibility", "Improved capacity planning", "More coordinated operational response"],
     complexityDrivers: ["Workflow ownership", "Signal quality", "Real-time operational adoption", "Change management"],
-    partners: ["Databricks", "Redox Engine", "Sigma Computing"]
+    partners: ["Databricks"]
   },
   "clinician-scheduling": {
     title: "Clinician Scheduling Optimization",

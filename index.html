@@ -200,14 +200,13 @@
 </article>
 <article class="foundation-card" data-component="streaming-data" id="foundation-streaming">
 <div class="foundation-summary">
-<div class="foundation-icon"><img alt="" src="assets/icons/streaming.svg"/></div>
+<div class="foundation-icon"><img alt="" src="assets/icons/event-stream.svg"/></div>
 <div class="foundation-main-copy">
 <div class="tag-row typed-tags">
 <span class="tag tag-type-foundation">Foundation</span>
 <span class="tag tag-data">Streaming events</span>
 <span class="tag tag-data">Clinical</span>
 <span class="tag tag-data">Operational</span>
-<span class="tag tag-partner">Partner: Redox Engine</span>
 </div>
 <h3>Streaming Data</h3>
 <p>Enable near-real-time event feeds that support time-sensitive operational visibility, model freshness, care coordination, and in-workflow actions.</p>
@@ -333,7 +332,7 @@
 <article class="featured-usecase-card" data-tags="system rapid partner medium">
 <div class="featured-usecase-copy">
 <div class="tag-row typed-tags">
-<span class="tag tag-featured">Featured onsite demo</span>
+<span class="tag tag-featured">Current Use Case Initiative</span>
 <span class="tag tag-foundation">Foundation: System data</span>
 <span class="tag tag-outcome">Outcome: Rapid insights</span>
 <span class="tag tag-complexity">Complexity: Medium</span>
@@ -345,9 +344,9 @@
 <button class="button button-primary" data-scroll-target="featured-use-case">Open featured story</button>
 </div>
 <div aria-label="Conceptual solution sketch for acquisition integration hub" class="solution-sketch acquisition-sketch">
-<div class="sketch-source-stack"><span>Cerner EHR</span><span>Kodiak RCA</span><span>Legacy finance</span></div>
+<div class="sketch-source-stack extended-sources"><span>Parkview EHR</span><span>Acquired EHR(s)</span><span>Finance System(s)</span><span>Supply Chain System(s)</span><span>Workforce System(s)</span></div>
 <div class="sketch-arrow"></div>
-<div class="sketch-platform"><img alt="Databricks" src="assets/logos/databricks.svg"/><strong>Quality profile + standardized model</strong></div>
+<div class="sketch-platform"><img alt="Databricks" src="assets/logos/databricks.svg"/><strong>Integration Hub</strong></div>
 <div class="sketch-arrow"></div>
 <div class="sketch-output"><strong>Sigma executive workbook</strong><span>Certified metrics</span><span>Operational views</span></div>
 </div>
@@ -374,8 +373,8 @@
 <div class="mini-solution"><span>Fax / scan</span><span>Extract fields</span><span>Route to queue</span></div>
 <button class="text-link open-case" data-open-case="continuity">Open details</button>
 </article>
-<article class="use-case-card" data-case="command-center" data-tags="system streaming predictive partner high">
-<div class="tag-row typed-tags"><span class="tag tag-foundation">System + streaming</span><span class="tag tag-outcome">Predictive</span><span class="tag tag-partner">Sigma + Redox</span><span class="tag tag-complexity">High</span></div>
+<article class="use-case-card" data-case="command-center" data-tags="system streaming predictive high">
+<div class="tag-row typed-tags"><span class="tag tag-foundation">System + streaming</span><span class="tag tag-outcome">Predictive</span><span class="tag tag-complexity">High</span></div>
 <h3>Clinical Command Center</h3>
 <p>Combine operational, clinical, and event data to help leaders manage patient flow, capacity, discharge readiness, and bottlenecks.</p>
 <div class="mini-solution"><span>Bed + ADT signals</span><span>Forecast risk</span><span>Leader console</span></div>
@@ -428,7 +427,7 @@
 <span class="demo-kicker">Step 01 / Source onboarding</span>
 <h3>Acquisition source intake</h3>
 <p>Databricks becomes the consistent landing zone for acquired clinical, operational, and financial datasets.</p>
-<div class="demo-flow large-flow"><span>Cerner EHR</span><span>Kodiak RCA</span><span>Provider master</span><i></i><strong>Databricks Bronze / Silver intake</strong></div>
+<div class="demo-flow large-flow source-hub-flow"><div class="source-mosaic"><span>Parkview EHR</span><span>Acquired EHR(s)</span><span>Finance System(s)</span><span>Supply Chain System(s)</span><span>Workforce System(s)</span></div><i></i><strong>Databricks Bronze / Silver intake</strong></div>
 </section>
 <section class="demo-tab" hidden="" id="demo-quality" role="tabpanel">
 <span class="demo-kicker">Step 02 / Profiling</span>
@@ -456,9 +455,9 @@
 </section>
 </div>
 </div>
-<div class="story-bottom-grid">
-<article><h3>Illustrative benefit ranges to calibrate</h3><p>Moderate estimate ranges for discussion: 20-35% less reconciliation effort, 25-40% faster KPI onboarding for acquired entities, earlier quality issue visibility, and a repeatable playbook for future transactions.</p></article>
-<article><h3>Prerequisites</h3><p>Core system data, data quality rules, certified metrics, normalized views, transaction detail, security, and stewardship model.</p></article>
+<div class="story-bottom-grid two-card-grid">
+<article><h3>Benefits</h3><p>Moderate estimate ranges for discussion: 20-35% less reconciliation effort, 25-40% faster KPI onboarding for acquired entities, earlier quality issue visibility, and a repeatable playbook for future transactions.</p></article>
+
 <article><h3>Complexity</h3><p>Medium. Higher if source data lacks dictionary coverage, identity resolution, or finance definition alignment.</p></article>
 </div>
 </div>
@@ -573,7 +572,7 @@
 <span class="eyebrow">Enabled analytics and intelligence</span>
 <h2>Once the foundation and platform capabilities exist, Parkview can scale three outcome families.</h2>
 </div>
-<p>Each analytics area now stands as a full-width story with relevant tools, required platform capabilities, example use cases, and a conceptual interface view.</p>
+
 </div>
 <article class="analytics-story-card" id="analytics-rapid">
 <div class="analytics-copy">
@@ -603,7 +602,7 @@
 <span class="eyebrow">Outcome family</span>
 <h3>AI &amp; Workflow</h3>
 <p>Operationalize AI and analytics through apps, copilots, worklists, and workflow actions that are grounded in governed data and connected to the right systems.</p>
-<div class="tool-row"><span>Databricks Apps</span><span>Databricks Lakebase</span><span>Redox Engine</span><span>Sigma AI Apps</span></div>
+<div class="tool-row"><span>Databricks Apps</span><span>Databricks Lakebase</span></div>
 <div class="analytics-detail-grid"><div><strong>Parkview can activate</strong><ul><li>Patient engagement chatbot</li><li>Care coordination worklists</li><li>Scheduling optimization actions</li><li>AI outputs surfaced in workflows</li></ul></div><div><strong>Needs from the platform</strong><ul><li>Interoperability</li><li>Unstructured Data</li><li>Reusable AI Features</li><li>Security and audit controls</li></ul></div></div>
 </div>
 <div aria-label="AI workflow conceptual app" class="analytics-visual workflow-visual"><div class="workflow-card"><span>Event trigger</span><strong>New discharge-ready signal</strong></div><div class="workflow-card"><span>AI recommendation</span><strong>Prioritize follow-up worklist</strong></div><div class="workflow-card"><span>Action</span><strong>Route to care team queue</strong></div></div>

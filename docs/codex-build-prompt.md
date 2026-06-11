@@ -33,3 +33,14 @@ Do not rename the middle layer to “data products.” The items in that layer s
 ## New implementation requirement: Databricks App Demos
 
 Preserve the new `#databricks-demos` section and quick-jump navigation. The section must include only Provider demos from the supplied healthcare AI microsite. Keep the iframe modal behavior or convert it to a React modal component with the same behavior. Do not add Payer or Life Sciences demos unless explicitly requested.
+
+
+## Follow-up content feedback to preserve
+
+- Streaming Data uses the same `event-stream.svg` icon in the platform map and foundation card.
+- Do not show a Redox Engine tag on the Streaming Data foundation card. Keep Redox references only for Redox-specific/event-feed use cases or partner strips where appropriate.
+- The Post-Acquisition Data Integration Hub use-case tag is **Current Use Case Initiative**, not **Featured onsite demo**.
+- The acquisition solution sketch uses source labels: Parkview EHR, Acquired EHR(s), Finance System(s), Supply Chain System(s), and Workforce System(s). The Databricks middle node is labeled **Integration Hub**.
+- Clinical Command Center should not show a Sigma + Redox partner tag on the card.
+- The Featured Acquisition story bottom cards are **Benefits** and **Complexity** only; remove the Prerequisites bottom card.
+- In Enabled Analytics, AI & Workflow tools are **Databricks Apps** and **Databricks Lakebase** only.
