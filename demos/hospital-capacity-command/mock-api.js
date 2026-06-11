@@ -367,6 +367,9 @@
   window.fetch = function (input, init) {
     var url = typeof input === "string" ? input : (input && input.url) || "";
     var path = url.replace(/^https?:\/\/[^\/]+/, "").split("#")[0];
+    var apiIndex = path.indexOf("/api/");
+    if (apiIndex > 0) path = path.slice(apiIndex);
+    if (path.indexOf("api/") === 0) path = "/" + path;
     var qs = "";
     var qi = path.indexOf("?");
     var query = {};
