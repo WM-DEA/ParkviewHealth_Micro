@@ -1,28 +1,250 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Capacity Command — Hospital Operations Prototype</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" crossorigin href="assets/index-DfXCYdod.css">
-    <style>
-      button[aria-label="Open Simulation Control"]{display:none !important}
-      #wm-credit{position:fixed;left:10px;bottom:9px;z-index:2147483000;pointer-events:none;
-        font-family:'Inter',system-ui,sans-serif;font-size:11px;line-height:1.3;color:#5b6b86;
-        background:rgba(255,255,255,.78);border:1px solid rgba(80,101,142,.22);border-radius:7px;
-        padding:5px 9px;backdrop-filter:blur(4px);max-width:340px}
-      #wm-credit b{color:#070154;font-weight:600}
-    </style>
-    <!-- classic script: runs before the deferred module so window.fetch is patched first -->
-    <script src="mock-api.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capacity Command - Hospital Operations Prototype</title>
+    <link rel="stylesheet" href="assets/capacity-command-live.css">
   </head>
   <body>
-    <div id="root"></div>
-    <div id="wm-credit">Prototype &middot; application by <b>Mobeen Vaid</b> &middot; packaged as a standalone demo by <b>West Monroe</b></div>
-    <script type="module" crossorigin src="assets/index-CWPB_tyE-rt2.js"></script>
+    <div class="cc-shell">
+      <header class="cc-header">
+        <nav class="cc-tabs" aria-label="Command center views">
+          <button class="cc-tab is-active" type="button" data-view="dashboard">Dashboard</button>
+          <button class="cc-tab" type="button" data-view="flow">Data Flow</button>
+          <button class="cc-tab" type="button" data-view="guide">Guide</button>
+        </nav>
+
+        <div class="cc-time-block">
+          <strong id="simTime">02:15:14</strong>
+          <span id="simPeriod">PM</span>
+        </div>
+
+        <div class="cc-status-row" aria-label="Current operating status">
+          <span class="cc-status constrained"><i></i>Constrained</span>
+          <span class="cc-status live"><i></i>Live</span>
+        </div>
+
+        <section class="cc-top-metrics" aria-label="Hospital operating metrics">
+          <article>
+            <strong id="metricCensus">224</strong>
+            <span>Total Census</span>
+          </article>
+          <article>
+            <strong id="metricWaiting">18</strong>
+            <span>ED Waiting</span>
+          </article>
+          <article>
+            <strong id="metricBoarders">7</strong>
+            <span>ED Boarders</span>
+          </article>
+          <article>
+            <strong id="metricWait">42</strong>
+            <span>Avg Wait (Min)</span>
+          </article>
+          <article>
+            <strong id="metricBeds">26</strong>
+            <span>Beds Available</span>
+          </article>
+          <article>
+            <strong id="metricOr">6 / 8</strong>
+            <span>OR Active</span>
+          </article>
+        </section>
+      </header>
+
+      <main>
+        <section class="cc-view is-active" data-panel="dashboard">
+          <section class="cc-dashboard-grid">
+            <article class="cc-panel cc-ed-panel">
+              <div class="cc-panel-head">
+                <h1>ED Census</h1>
+                <span>Next hr: ~8/hr</span>
+              </div>
+              <dl class="cc-ed-stats">
+                <div>
+                  <dt>Waiting</dt>
+                  <dd id="edWaiting">18</dd>
+                </div>
+                <div>
+                  <dt>Boarders</dt>
+                  <dd class="danger"><span id="edBoarders">7</span><em>Escalation</em></dd>
+                </div>
+                <div>
+                  <dt>Avg Wait</dt>
+                  <dd><span id="avgWait">42.0</span> min</dd>
+                </div>
+              </dl>
+              <div class="cc-threshold">
+                <div class="cc-threshold-fill" id="waitFill"></div>
+              </div>
+              <p class="cc-muted">CMS benchmark: 30 min</p>
+              <div class="cc-esi">
+                <span>ESI Breakdown</span>
+                <div class="cc-esi-bar">
+                  <i class="esi-1"></i>
+                  <i class="esi-2"></i>
+                  <i class="esi-3"></i>
+                  <i class="esi-4"></i>
+                  <i class="esi-5"></i>
+                </div>
+                <div class="cc-esi-labels">
+                  <span>ESI 1</span><span>ESI 2</span><span>ESI 3</span><span>ESI 4</span><span>ESI 5</span>
+                </div>
+              </div>
+              <div class="cc-arrivals">
+                <span>Arrivals/hr (last 4h)</span>
+                <svg viewBox="0 0 340 100" role="img" aria-label="Arrivals trend">
+                  <path d="M4 74 C68 56 92 48 142 50 S218 72 270 60 S316 40 336 30"></path>
+                  <path d="M4 74 C68 56 92 48 142 50 S218 72 270 60 S316 40 336 30 L336 94 L4 94 Z"></path>
+                </svg>
+              </div>
+              <p class="cc-alert">LWBS: <strong>3.4%</strong> (elevated)</p>
+            </article>
+
+            <article class="cc-panel cc-bed-panel">
+              <div class="cc-panel-head cc-bed-head">
+                <div>
+                  <h1>Bed Management</h1>
+                  <span id="dcForecast">9 DC predicted next 2h</span>
+                </div>
+                <div class="cc-legend">
+                  <span><i class="legend available"></i>Available</span>
+                  <span><i class="legend occupied"></i>Occupied</span>
+                  <span><i class="legend cleaning"></i>Cleaning</span>
+                  <span><i class="legend blocked"></i>Blocked</span>
+                </div>
+              </div>
+              <div class="cc-bed-units" id="bedUnits"></div>
+            </article>
+
+            <article class="cc-panel cc-event-panel">
+              <div class="cc-panel-head">
+                <h1>Event Log</h1>
+                <span id="eventFreshness">4s stale</span>
+              </div>
+              <div class="cc-events" id="eventLog"></div>
+            </article>
+          </section>
+        </section>
+
+        <section class="cc-view" data-panel="flow">
+          <section class="cc-flow-grid">
+            <article class="cc-flow-card">
+              <span>01</span>
+              <h2>ADT, ED, OR, Bed Board</h2>
+              <p>Operational feeds stream patient movement, bed state, procedure status, and discharge readiness signals.</p>
+            </article>
+            <article class="cc-flow-card">
+              <span>02</span>
+              <h2>Bronze / Silver Lakehouse</h2>
+              <p>Raw events are normalized into reliable clinical and operational domains with quality checks and lineage.</p>
+            </article>
+            <article class="cc-flow-card">
+              <span>03</span>
+              <h2>Gold Features</h2>
+              <p>Forecast-ready features score arrivals, occupancy pressure, transfer risk, and discharge likelihood.</p>
+            </article>
+            <article class="cc-flow-card">
+              <span>04</span>
+              <h2>Live Store</h2>
+              <p>A low-latency serving layer powers the command-center app and operator writeback workflow.</p>
+            </article>
+            <article class="cc-flow-card">
+              <span>05</span>
+              <h2>Command Center</h2>
+              <p>Leaders see the current operating picture, forecast risk, and recommended actions in one interface.</p>
+            </article>
+          </section>
+          <section class="cc-panel cc-pipeline-panel">
+            <div class="cc-panel-head">
+              <h1>Pipeline Health</h1>
+              <span>Governed through Databricks</span>
+            </div>
+            <div class="cc-pipeline" id="pipelineSteps"></div>
+          </section>
+        </section>
+
+        <section class="cc-view" data-panel="guide">
+          <section class="cc-guide-grid">
+            <article class="cc-guide-card">
+              <h2>Clinical Ops Talk Track</h2>
+              <p>Use the dashboard to show how leaders can align bed management, nursing, ED, OR, and discharge planning around one live picture.</p>
+              <button type="button" data-question="clinical">Ask assistant</button>
+            </article>
+            <article class="cc-guide-card">
+              <h2>IT / Architecture Talk Track</h2>
+              <p>Use Data Flow to explain the lakehouse, governed features, Live Store serving, and audit-friendly operating pattern.</p>
+              <button type="button" data-question="architecture">Ask assistant</button>
+            </article>
+            <article class="cc-guide-card">
+              <h2>Executive Close</h2>
+              <p>Frame the demo around fewer manual reconciliations, earlier surge detection, shorter huddle prep, and reusable operational apps.</p>
+              <button type="button" data-question="executive">Ask assistant</button>
+            </article>
+          </section>
+          <section class="cc-panel cc-objections">
+            <div class="cc-panel-head">
+              <h1>Common Objections</h1>
+              <span>Click for response</span>
+            </div>
+            <div class="cc-objection-list" id="objections"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <aside class="cc-bed-drawer" id="bedDrawer" aria-hidden="true">
+      <div class="cc-drawer-head">
+        <div>
+          <span>Selected bed</span>
+          <h2 id="drawerBedId">ED-01</h2>
+        </div>
+        <button type="button" id="closeBedDrawer" aria-label="Close bed details">x</button>
+      </div>
+      <dl id="bedDetails"></dl>
+      <div class="cc-drawer-actions">
+        <button type="button" id="markReady">Mark Ready</button>
+        <button type="button" id="blockBed">Block Bed</button>
+      </div>
+    </aside>
+
+    <aside class="cc-side-panel" id="lifecyclePanel" aria-hidden="true">
+      <div class="cc-side-head">
+        <div>
+          <span>Lifecycle</span>
+          <h2>Simulation Control</h2>
+        </div>
+        <button type="button" data-close-panel="lifecyclePanel" aria-label="Close lifecycle">x</button>
+      </div>
+      <div class="cc-control-grid">
+        <button type="button" data-preset="normal">Normal</button>
+        <button type="button" data-preset="surge">Surge</button>
+        <button type="button" data-preset="peak">Peak Hour</button>
+        <button type="button" data-preset="fast">Fast Forward</button>
+      </div>
+      <p id="lifecycleMessage">Realtime mode. Data flows into the command center every few seconds.</p>
+    </aside>
+
+    <aside class="cc-side-panel cc-assistant-panel" id="assistantPanel" aria-hidden="true">
+      <div class="cc-side-head">
+        <div>
+          <span>AI Assistant</span>
+          <h2>Capacity Supervisor</h2>
+        </div>
+        <button type="button" data-close-panel="assistantPanel" aria-label="Close assistant">x</button>
+      </div>
+      <div class="cc-assistant-log" id="assistantLog"></div>
+      <form class="cc-assistant-form" id="assistantForm">
+        <input id="assistantQuestion" type="text" value="What should we watch in the next two hours?" aria-label="Ask the AI assistant">
+        <button type="submit">Ask</button>
+      </form>
+    </aside>
+
+    <button class="cc-floating cc-lifecycle" type="button" id="openLifecycle">Lifecycle</button>
+    <button class="cc-floating cc-assistant" type="button" id="openAssistant">AI Assistant</button>
+
+    <div class="cc-credit">Prototype - application by <strong>Mobeen Vaid</strong> - packaged as a standalone demo by <strong>West Monroe</strong></div>
+    <script defer src="assets/capacity-command-live.js"></script>
   </body>
 </html>
