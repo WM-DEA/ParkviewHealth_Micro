@@ -48,12 +48,12 @@ Behavior:
 - Demo iframe source is cleared on close to stop app state/audio/network activity.
 
 Integrated provider demos:
+- Hospital Operations Command Center
 - Ambient Clinical Documentation
 - Clinical Coding & CDI Copilot
 - Prior Authorization Automation
 - Denial Management & Appeals
 - Patient Access & Referral Leakage
-- Hospital Operations Command Center
 - Multi-Site Eye-Care Performance Analytics
 
 

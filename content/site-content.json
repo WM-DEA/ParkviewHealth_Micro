@@ -234,17 +234,17 @@
   ],
   "demos": [
     {
-      "id": "ambient",
-      "title": "Ambient Clinical Documentation",
-      "src": "demos/ambient-clinical-documentation/index.html",
-      "screenshot": "assets/demos/shots/ambient-clinical-documentation.png",
-      "providerAudience": "physicians, APPs, and clinical informatics",
-      "summary": "Turns a visit conversation into a sourced draft note, suggests supported E&M and diagnosis codes, and keeps clinician attestation at the center of the workflow.",
+      "id": "capacity",
+      "title": "Hospital Operations Command Center",
+      "src": "demos/hospital-capacity-command/index.html",
+      "screenshot": "assets/demos/shots/hospital-capacity-command.png",
+      "providerAudience": "house supervisors, bed managers, and ED / OR charge nurses",
+      "summary": "Unifies bed, ED, OR, and discharge signals into a current operating view with short-horizon forecasts and operator-owned capacity recommendations.",
       "tools": [
         "Databricks Apps",
-        "Document Intelligence",
-        "ML",
-        "AI/BI"
+        "Lakebase",
+        "Model Serving",
+        "Genie"
       ]
     },
     {
@@ -304,17 +304,17 @@
       ]
     },
     {
-      "id": "capacity",
-      "title": "Hospital Operations Command Center",
-      "src": "demos/hospital-capacity-command/index.html",
-      "screenshot": "assets/demos/shots/hospital-capacity-command.png",
-      "providerAudience": "house supervisors, bed managers, and ED / OR charge nurses",
-      "summary": "Unifies bed, ED, OR, and discharge signals into a current operating view with short-horizon forecasts and operator-owned capacity recommendations.",
+      "id": "ambient",
+      "title": "Ambient Clinical Documentation",
+      "src": "demos/ambient-clinical-documentation/index.html",
+      "screenshot": "assets/demos/shots/ambient-clinical-documentation.png",
+      "providerAudience": "physicians, APPs, and clinical informatics",
+      "summary": "Turns a visit conversation into a sourced draft note, suggests supported E&M and diagnosis codes, and keeps clinician attestation at the center of the workflow.",
       "tools": [
         "Databricks Apps",
-        "Lakebase",
-        "Model Serving",
-        "Genie"
+        "Document Intelligence",
+        "ML",
+        "AI/BI"
       ]
     },
     {
