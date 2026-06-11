@@ -2,7 +2,7 @@
 
 ## Navigation
 
-The header remains sticky and allows leaders to move between Overview, Platform map, Foundations, Capabilities, Use cases, and Analytics. Active navigation updates as the user scrolls.
+The header remains sticky and allows leaders to move between Overview, Platform map, Foundations, Capabilities, Use cases, Demos, and Analytics. Active navigation updates as the user scrolls.
 
 ## Platform map
 
@@ -25,7 +25,7 @@ Use cases are filterable by foundation, outcome, and partner relevance. Tags hav
 - Partner tags identify relevant vendors or platform tools.
 - Complexity tags indicate implementation complexity.
 
-Use-case detail panels include business description, solution sketch, prerequisites, benefits to validate, complexity, complexity drivers, and partner/tool relevance.
+Use-case detail panels include business description, solution sketch, prerequisites, expected benefits, complexity, complexity drivers, and partner/tool relevance.
 
 ## Featured acquisition demo
 
@@ -48,10 +48,15 @@ Behavior:
 - Demo iframe source is cleared on close to stop app state/audio/network activity.
 
 Integrated provider demos:
+- Hospital Operations Command Center
 - Ambient Clinical Documentation
 - Clinical Coding & CDI Copilot
 - Prior Authorization Automation
 - Denial Management & Appeals
 - Patient Access & Referral Leakage
-- Hospital Operations Command Center
 - Multi-Site Eye-Care Performance Analytics
+
+
+## Icon consistency
+
+Use the icon taxonomy in `content/content-model.json`. The same source system, foundation component, platform capability, or enabled outcome should use the same SVG file everywhere it appears in the microsite. Streaming Data uses `assets/icons/event-stream.svg` in both the platform map and foundation card.

@@ -3,214 +3,248 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Operations Command Center</title>
-    <link rel="stylesheet" href="assets/command-center-static.css">
+    <title>Capacity Command - Hospital Operations Prototype</title>
+    <link rel="stylesheet" href="assets/capacity-command-live.css">
   </head>
   <body>
-    <div class="app-shell">
-      <header class="topbar">
-        <div class="brand-block">
-          <span class="eyebrow">Databricks App Demo</span>
-          <h1>Hospital Operations Command Center</h1>
-          <p>Live bed, ED, OR, discharge, and forecast signals in one operating view.</p>
+    <div class="cc-shell">
+      <header class="cc-header">
+        <nav class="cc-tabs" aria-label="Command center views">
+          <button class="cc-tab is-active" type="button" data-view="dashboard">Dashboard</button>
+          <button class="cc-tab" type="button" data-view="flow">Data Flow</button>
+          <button class="cc-tab" type="button" data-view="guide">Guide</button>
+        </nav>
+
+        <div class="cc-time-block">
+          <strong id="simTime">02:15:14</strong>
+          <span id="simPeriod">PM</span>
         </div>
-        <div class="status-cluster" aria-label="Current command center status">
-          <div class="status-pill constrained">Constrained</div>
-          <div class="status-pill live">Live prototype</div>
-          <div class="clock" id="clock">--:--:--</div>
+
+        <div class="cc-status-row" aria-label="Current operating status">
+          <span class="cc-status constrained"><i></i>Constrained</span>
+          <span class="cc-status live"><i></i>Live</span>
         </div>
+
+        <section class="cc-top-metrics" aria-label="Hospital operating metrics">
+          <article>
+            <strong id="metricCensus">224</strong>
+            <span>Total Census</span>
+          </article>
+          <article>
+            <strong id="metricWaiting">18</strong>
+            <span>ED Waiting</span>
+          </article>
+          <article>
+            <strong id="metricBoarders">7</strong>
+            <span>ED Boarders</span>
+          </article>
+          <article>
+            <strong id="metricWait">42</strong>
+            <span>Avg Wait (Min)</span>
+          </article>
+          <article>
+            <strong id="metricBeds">26</strong>
+            <span>Beds Available</span>
+          </article>
+          <article>
+            <strong id="metricOr">6 / 8</strong>
+            <span>OR Active</span>
+          </article>
+        </section>
       </header>
 
-      <nav class="view-tabs" aria-label="Demo views">
-        <button class="tab-button is-active" type="button" data-tab="dashboard">Dashboard</button>
-        <button class="tab-button" type="button" data-tab="flow">Data Flow</button>
-        <button class="tab-button" type="button" data-tab="guide">Executive Narrative</button>
-      </nav>
-
       <main>
-        <section class="view-panel is-active" data-panel="dashboard">
-          <section class="metric-grid" aria-label="Hospital operating metrics">
-            <article class="metric-card">
-              <span>Total Census</span>
-              <strong id="totalCensus">224</strong>
-              <em>87.2% occupied</em>
-            </article>
-            <article class="metric-card warning">
-              <span>ED Waiting</span>
-              <strong id="edWaiting">18</strong>
-              <em>+4 from baseline</em>
-            </article>
-            <article class="metric-card critical">
-              <span>ED Boarders</span>
-              <strong id="edBoarders">7</strong>
-              <em>ICU pressure rising</em>
-            </article>
-            <article class="metric-card">
-              <span>Avg Wait</span>
-              <strong id="avgWait">42</strong>
-              <em>minutes</em>
-            </article>
-            <article class="metric-card good">
-              <span>Beds Available</span>
-              <strong id="bedsAvailable">21</strong>
-              <em>9 clean-ready soon</em>
-            </article>
-            <article class="metric-card">
-              <span>OR Active</span>
-              <strong id="orActive">6 / 8</strong>
-              <em>next room in 35 min</em>
-            </article>
-          </section>
-
-          <section class="dashboard-grid">
-            <article class="ops-panel unit-panel">
-              <div class="panel-heading">
-                <div>
-                  <span class="eyebrow">Capacity by unit</span>
-                  <h2>Bed Management</h2>
-                </div>
-                <button class="text-action" type="button" id="simulateSurge">Simulate surge</button>
+        <section class="cc-view is-active" data-panel="dashboard">
+          <section class="cc-dashboard-grid">
+            <article class="cc-panel cc-ed-panel">
+              <div class="cc-panel-head">
+                <h1>ED Census</h1>
+                <span>Next hr: ~8/hr</span>
               </div>
-              <div class="unit-list" id="unitList"></div>
-            </article>
-
-            <article class="ops-panel">
-              <div class="panel-heading">
+              <dl class="cc-ed-stats">
                 <div>
-                  <span class="eyebrow">Selected unit</span>
-                  <h2 id="selectedUnitTitle">Emergency Department</h2>
+                  <dt>Waiting</dt>
+                  <dd id="edWaiting">18</dd>
                 </div>
-                <span class="severity-badge warning" id="selectedSeverity">Warning</span>
+                <div>
+                  <dt>Boarders</dt>
+                  <dd class="danger"><span id="edBoarders">7</span><em>Escalation</em></dd>
+                </div>
+                <div>
+                  <dt>Avg Wait</dt>
+                  <dd><span id="avgWait">42.0</span> min</dd>
+                </div>
+              </dl>
+              <div class="cc-threshold">
+                <div class="cc-threshold-fill" id="waitFill"></div>
               </div>
-              <div class="selected-grid">
-                <div>
-                  <span>Available</span>
-                  <strong id="selectedAvailable">2</strong>
+              <p class="cc-muted">CMS benchmark: 30 min</p>
+              <div class="cc-esi">
+                <span>ESI Breakdown</span>
+                <div class="cc-esi-bar">
+                  <i class="esi-1"></i>
+                  <i class="esi-2"></i>
+                  <i class="esi-3"></i>
+                  <i class="esi-4"></i>
+                  <i class="esi-5"></i>
                 </div>
-                <div>
-                  <span>Cleaning</span>
-                  <strong id="selectedCleaning">4</strong>
-                </div>
-                <div>
-                  <span>Blocked</span>
-                  <strong id="selectedBlocked">1</strong>
-                </div>
-                <div>
-                  <span>Predicted 2h</span>
-                  <strong id="selectedForecast">3</strong>
+                <div class="cc-esi-labels">
+                  <span>ESI 1</span><span>ESI 2</span><span>ESI 3</span><span>ESI 4</span><span>ESI 5</span>
                 </div>
               </div>
-              <div class="action-row">
-                <button class="primary-action" type="button" id="readyBed">Mark bed ready</button>
-                <button class="secondary-action" type="button" id="openEscalation">Open escalation</button>
+              <div class="cc-arrivals">
+                <span>Arrivals/hr (last 4h)</span>
+                <svg viewBox="0 0 340 100" role="img" aria-label="Arrivals trend">
+                  <path d="M4 74 C68 56 92 48 142 50 S218 72 270 60 S316 40 336 30"></path>
+                  <path d="M4 74 C68 56 92 48 142 50 S218 72 270 60 S316 40 336 30 L336 94 L4 94 Z"></path>
+                </svg>
               </div>
-              <p class="operator-note" id="operatorNote">ED boarding risk is elevated. Prioritize ICU and telemetry turnover before the next arrival wave.</p>
+              <p class="cc-alert">LWBS: <strong>3.4%</strong> (elevated)</p>
             </article>
 
-            <article class="ops-panel forecast-panel">
-              <div class="panel-heading">
+            <article class="cc-panel cc-bed-panel">
+              <div class="cc-panel-head cc-bed-head">
                 <div>
-                  <span class="eyebrow">Short-horizon forecast</span>
-                  <h2>Demand and Discharge Outlook</h2>
+                  <h1>Bed Management</h1>
+                  <span id="dcForecast">9 DC predicted next 2h</span>
                 </div>
-                <span class="confidence">82% confidence</span>
+                <div class="cc-legend">
+                  <span><i class="legend available"></i>Available</span>
+                  <span><i class="legend occupied"></i>Occupied</span>
+                  <span><i class="legend cleaning"></i>Cleaning</span>
+                  <span><i class="legend blocked"></i>Blocked</span>
+                </div>
               </div>
-              <div class="forecast-bars" id="forecastBars"></div>
+              <div class="cc-bed-units" id="bedUnits"></div>
             </article>
 
-            <article class="ops-panel">
-              <div class="panel-heading">
-                <div>
-                  <span class="eyebrow">Event stream</span>
-                  <h2>Live Operating Signals</h2>
-                </div>
-                <span class="refresh-chip">4s stale</span>
+            <article class="cc-panel cc-event-panel">
+              <div class="cc-panel-head">
+                <h1>Event Log</h1>
+                <span id="eventFreshness">4s stale</span>
               </div>
-              <div class="event-list" id="eventList"></div>
+              <div class="cc-events" id="eventLog"></div>
             </article>
           </section>
         </section>
 
-        <section class="view-panel" data-panel="flow">
-          <section class="flow-layout">
-            <article class="flow-step">
+        <section class="cc-view" data-panel="flow">
+          <section class="cc-flow-grid">
+            <article class="cc-flow-card">
               <span>01</span>
-              <h2>Source Signals</h2>
-              <p>ADT, bed board, ED, OR, discharge, staffing, and location signals stream from operational systems.</p>
+              <h2>ADT, ED, OR, Bed Board</h2>
+              <p>Operational feeds stream patient movement, bed state, procedure status, and discharge readiness signals.</p>
             </article>
-            <article class="flow-step">
+            <article class="cc-flow-card">
               <span>02</span>
-              <h2>Lakehouse Foundation</h2>
-              <p>Clinical, operational, and event data is normalized into governed data products with lineage.</p>
+              <h2>Bronze / Silver Lakehouse</h2>
+              <p>Raw events are normalized into reliable clinical and operational domains with quality checks and lineage.</p>
             </article>
-            <article class="flow-step">
+            <article class="cc-flow-card">
               <span>03</span>
-              <h2>Forecast Features</h2>
-              <p>Arrival, discharge, acuity, bottleneck, and capacity features feed short-horizon models.</p>
+              <h2>Gold Features</h2>
+              <p>Forecast-ready features score arrivals, occupancy pressure, transfer risk, and discharge likelihood.</p>
             </article>
-            <article class="flow-step">
+            <article class="cc-flow-card">
               <span>04</span>
-              <h2>Operational Store</h2>
-              <p>Curated signals sync into a low-latency serving layer for command-center workflows.</p>
+              <h2>Live Store</h2>
+              <p>A low-latency serving layer powers the command-center app and operator writeback workflow.</p>
             </article>
-            <article class="flow-step">
+            <article class="cc-flow-card">
               <span>05</span>
-              <h2>Action Surface</h2>
-              <p>Leaders see current state, forecast risk, and operator-owned recommendations in one interface.</p>
+              <h2>Command Center</h2>
+              <p>Leaders see the current operating picture, forecast risk, and recommended actions in one interface.</p>
             </article>
           </section>
-          <section class="ops-panel architecture-panel">
-            <div class="panel-heading">
-              <div>
-                <span class="eyebrow">Governed platform pattern</span>
-                <h2>Databricks-enabled operating model</h2>
-              </div>
+          <section class="cc-panel cc-pipeline-panel">
+            <div class="cc-panel-head">
+              <h1>Pipeline Health</h1>
+              <span>Governed through Databricks</span>
             </div>
-            <div class="architecture-grid">
-              <div><strong>Data quality</strong><span>Streaming checks, freshness thresholds, anomaly detection</span></div>
-              <div><strong>Governance</strong><span>Shared catalog, role-based access, audit-ready lineage</span></div>
-              <div><strong>Serving</strong><span>Low-latency app data for dashboards and writeback queues</span></div>
-              <div><strong>AI workflow</strong><span>Forecasts and recommendations stay human-reviewed</span></div>
-            </div>
+            <div class="cc-pipeline" id="pipelineSteps"></div>
           </section>
         </section>
 
-        <section class="view-panel" data-panel="guide">
-          <section class="narrative-grid">
-            <article class="narrative-panel">
-              <span class="eyebrow">Business problem</span>
-              <h2>Capacity decisions are faster than the reporting cycle.</h2>
-              <p>Hospital leaders often reconcile bed board, ED, OR, staffing, and discharge context manually. The command center turns those fragmented signals into a shared, near-real-time operating picture.</p>
+        <section class="cc-view" data-panel="guide">
+          <section class="cc-guide-grid">
+            <article class="cc-guide-card">
+              <h2>Clinical Ops Talk Track</h2>
+              <p>Use the dashboard to show how leaders can align bed management, nursing, ED, OR, and discharge planning around one live picture.</p>
+              <button type="button" data-question="clinical">Ask assistant</button>
             </article>
-            <article class="narrative-panel">
-              <span class="eyebrow">Target audience</span>
-              <h2>Clinical operations, nursing, ED, perioperative, and executive leadership.</h2>
-              <p>The app supports huddle preparation, surge response, throughput monitoring, discharge coordination, and escalation management.</p>
+            <article class="cc-guide-card">
+              <h2>IT / Architecture Talk Track</h2>
+              <p>Use Data Flow to explain the lakehouse, governed features, Live Store serving, and audit-friendly operating pattern.</p>
+              <button type="button" data-question="architecture">Ask assistant</button>
             </article>
-            <article class="narrative-panel">
-              <span class="eyebrow">Platform value</span>
-              <h2>One governed data path for analytics and operational action.</h2>
-              <p>Databricks provides the foundation for streaming data, curated features, model-ready forecasting, and consistent governance across the command-center workflow.</p>
+            <article class="cc-guide-card">
+              <h2>Executive Close</h2>
+              <p>Frame the demo around fewer manual reconciliations, earlier surge detection, shorter huddle prep, and reusable operational apps.</p>
+              <button type="button" data-question="executive">Ask assistant</button>
             </article>
           </section>
-          <section class="ops-panel">
-            <div class="panel-heading">
-              <div>
-                <span class="eyebrow">Illustrative outcomes</span>
-                <h2>What Parkview could improve</h2>
-              </div>
+          <section class="cc-panel cc-objections">
+            <div class="cc-panel-head">
+              <h1>Common Objections</h1>
+              <span>Click for response</span>
             </div>
-            <div class="outcome-list">
-              <div><strong>Earlier bottleneck detection</strong><span>Surface ED boarding and ICU constraint signals before escalation.</span></div>
-              <div><strong>More coordinated flow decisions</strong><span>Give nursing, bed management, ED, and OR teams the same operating picture.</span></div>
-              <div><strong>Better discharge readiness visibility</strong><span>Forecast near-term discharge capacity and prioritize turnarounds.</span></div>
-              <div><strong>Reusable operational pattern</strong><span>Apply the same data-to-app foundation to staffing, supply, and access workflows.</span></div>
-            </div>
+            <div class="cc-objection-list" id="objections"></div>
           </section>
         </section>
       </main>
     </div>
 
-    <script defer src="assets/command-center-static.js"></script>
+    <aside class="cc-bed-drawer" id="bedDrawer" aria-hidden="true">
+      <div class="cc-drawer-head">
+        <div>
+          <span>Selected bed</span>
+          <h2 id="drawerBedId">ED-01</h2>
+        </div>
+        <button type="button" id="closeBedDrawer" aria-label="Close bed details">x</button>
+      </div>
+      <dl id="bedDetails"></dl>
+      <div class="cc-drawer-actions">
+        <button type="button" id="markReady">Mark Ready</button>
+        <button type="button" id="blockBed">Block Bed</button>
+      </div>
+    </aside>
+
+    <aside class="cc-side-panel" id="lifecyclePanel" aria-hidden="true">
+      <div class="cc-side-head">
+        <div>
+          <span>Lifecycle</span>
+          <h2>Simulation Control</h2>
+        </div>
+        <button type="button" data-close-panel="lifecyclePanel" aria-label="Close lifecycle">x</button>
+      </div>
+      <div class="cc-control-grid">
+        <button type="button" data-preset="normal">Normal</button>
+        <button type="button" data-preset="surge">Surge</button>
+        <button type="button" data-preset="peak">Peak Hour</button>
+        <button type="button" data-preset="fast">Fast Forward</button>
+      </div>
+      <p id="lifecycleMessage">Realtime mode. Data flows into the command center every few seconds.</p>
+    </aside>
+
+    <aside class="cc-side-panel cc-assistant-panel" id="assistantPanel" aria-hidden="true">
+      <div class="cc-side-head">
+        <div>
+          <span>AI Assistant</span>
+          <h2>Capacity Supervisor</h2>
+        </div>
+        <button type="button" data-close-panel="assistantPanel" aria-label="Close assistant">x</button>
+      </div>
+      <div class="cc-assistant-log" id="assistantLog"></div>
+      <form class="cc-assistant-form" id="assistantForm">
+        <input id="assistantQuestion" type="text" value="What should we watch in the next two hours?" aria-label="Ask the AI assistant">
+        <button type="submit">Ask</button>
+      </form>
+    </aside>
+
+    <button class="cc-floating cc-lifecycle" type="button" id="openLifecycle">Lifecycle</button>
+    <button class="cc-floating cc-assistant" type="button" id="openAssistant">AI Assistant</button>
+
+    <div class="cc-credit">Prototype - application by <strong>Mobeen Vaid</strong> - packaged as a standalone demo by <strong>West Monroe</strong></div>
+    <script defer src="assets/capacity-command-live.js"></script>
   </body>
 </html>

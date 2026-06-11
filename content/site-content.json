@@ -3,7 +3,7 @@
   "hero": {
     "eyebrow": "Onsite Data Workshop",
     "headline": "Unified healthcare data, ready for decisions.",
-    "lede": "Turning Parkview\u2019s enterprise data into governed insight, predictive intelligence, and AI-enabled workflow through a modern Databricks-centered platform.",
+    "lede": "Turning Parkview’s enterprise data into governed insight, predictive intelligence, and AI-enabled workflow through a modern Databricks-centered platform.",
     "story_layers": [
       {
         "step": "01",
@@ -97,7 +97,6 @@
         "Clinical",
         "Operational"
       ],
-      "partner": "Redox Engine",
       "initial_use_cases": [
         "Redox ADT Event Enablement",
         "Databricks Genie event-based AI BI",
@@ -208,9 +207,7 @@
       "title": "AI & Workflow",
       "tools": [
         "Databricks Apps",
-        "Databricks Lakebase",
-        "Redox Engine",
-        "Sigma AI Apps"
+        "Databricks Lakebase"
       ],
       "examples": [
         "Patient engagement chatbot",
@@ -237,17 +234,17 @@
   ],
   "demos": [
     {
-      "id": "ambient",
-      "title": "Ambient Clinical Documentation",
-      "src": "demos/ambient-clinical-documentation/index.html",
-      "screenshot": "assets/demos/shots/ambient-clinical-documentation.png",
-      "providerAudience": "physicians, APPs, and clinical informatics",
-      "summary": "Turns a visit conversation into a sourced draft note, suggests supported E&M and diagnosis codes, and keeps clinician attestation at the center of the workflow.",
+      "id": "capacity",
+      "title": "Hospital Operations Command Center",
+      "src": "demos/hospital-capacity-command/index.html",
+      "screenshot": "assets/demos/shots/hospital-capacity-command.png",
+      "providerAudience": "house supervisors, bed managers, and ED / OR charge nurses",
+      "summary": "Unifies bed, ED, OR, and discharge signals into a current operating view with short-horizon forecasts and operator-owned capacity recommendations.",
       "tools": [
         "Databricks Apps",
-        "Document Intelligence",
-        "ML",
-        "AI/BI"
+        "Lakebase",
+        "Model Serving",
+        "Genie"
       ]
     },
     {
@@ -307,17 +304,17 @@
       ]
     },
     {
-      "id": "capacity",
-      "title": "Hospital Operations Command Center",
-      "src": "demos/hospital-capacity-command/index.html",
-      "screenshot": "assets/demos/shots/hospital-capacity-command.png",
-      "providerAudience": "house supervisors, bed managers, and ED / OR charge nurses",
-      "summary": "Unifies bed, ED, OR, and discharge signals into a current operating view with short-horizon forecasts and operator-owned capacity recommendations.",
+      "id": "ambient",
+      "title": "Ambient Clinical Documentation",
+      "src": "demos/ambient-clinical-documentation/index.html",
+      "screenshot": "assets/demos/shots/ambient-clinical-documentation.png",
+      "providerAudience": "physicians, APPs, and clinical informatics",
+      "summary": "Turns a visit conversation into a sourced draft note, suggests supported E&M and diagnosis codes, and keeps clinician attestation at the center of the workflow.",
       "tools": [
         "Databricks Apps",
-        "Lakebase",
-        "Model Serving",
-        "Genie"
+        "Document Intelligence",
+        "ML",
+        "AI/BI"
       ]
     },
     {
@@ -334,5 +331,166 @@
         "Genie"
       ]
     }
-  ]
+  ],
+  "icon_taxonomy": {
+    "source_systems": {
+      "Integration Engine": "assets/icons/router.svg",
+      "Connected / IoT Devices": "assets/icons/iot-devices.svg",
+      "Scheduling & Referrals": "assets/icons/calendar.svg",
+      "Electronic Health Record": "assets/icons/clinical.svg",
+      "Pharmacy / Laboratory": "assets/icons/lab.svg",
+      "Financial Management": "assets/icons/financial.svg",
+      "ERP / Supply Chain": "assets/icons/warehouse.svg",
+      "Scanning / Faxing / Imaging": "assets/icons/documents.svg"
+    },
+    "foundations": {
+      "Core Application System Data": "assets/icons/warehouse.svg",
+      "Streaming Data": "assets/icons/event-stream.svg",
+      "Unstructured Data": "assets/icons/documents.svg"
+    },
+    "consumption_layer_and_platform_capabilities": {
+      "Certified Metrics": "assets/icons/certified.svg",
+      "Normalized Views": "assets/icons/views.svg",
+      "Transaction Detail": "assets/icons/transaction.svg",
+      "Forecast / Budget Inputs": "assets/icons/forecast.svg",
+      "Interoperability": "assets/icons/interoperability.svg",
+      "Reusable AI Features": "assets/icons/model-features.svg"
+    },
+    "enabled_outcomes": {
+      "Rapid Insights": "assets/icons/rapid.svg",
+      "Predictive Analytics": "assets/icons/predictive.svg",
+      "AI & Workflow": "assets/icons/workflow.svg"
+    }
+  },
+  "use_cases": [
+    {
+      "id": "post-acquisition-data-integration-hub",
+      "title": "Post-Acquisition Data Integration Hub",
+      "tags": [
+        "Current Use Case Initiative",
+        "Foundation: System data",
+        "Outcome: Rapid insights",
+        "Complexity: Medium",
+        "Partners: Sigma + Redox"
+      ],
+      "summary": "Integrate acquired EHR and financial sources into Databricks, profile data quality, align definitions to Parkview standards, and publish certified metrics that executives can analyze in Sigma.",
+      "solution_sketch": [
+        "Parkview EHR",
+        "Acquired EHR(s)",
+        "Finance System(s)",
+        "Supply Chain System(s)",
+        "Workforce System(s)",
+        "Integration Hub",
+        "Sigma executive workbook"
+      ],
+      "expected_benefits": [
+        "25-40% faster KPI onboarding for acquired entities (directional estimate)",
+        "20-35% less reconciliation and report rework (directional estimate)",
+        "Earlier visibility into data quality risks",
+        "Consistent board and executive reporting",
+        "Reusable playbook for future transactions"
+      ],
+      "complexity": "Medium"
+    },
+    {
+      "id": "sigma-bi",
+      "title": "Sigma AI Business Intelligence",
+      "tags": [
+        "System data",
+        "Rapid insights",
+        "Sigma",
+        "Low-Med"
+      ],
+      "summary": "Give business leaders trusted, conversational exploration and dashboards over certified metrics without recreating logic in every report."
+    },
+    {
+      "id": "redox-adt",
+      "title": "Redox ADT Event Enablement",
+      "tags": [
+        "Streaming",
+        "AI & workflow",
+        "Redox",
+        "Medium"
+      ],
+      "summary": "Use admission, discharge, and transfer events to trigger operational visibility, worklists, and care coordination actions."
+    },
+    {
+      "id": "continuity",
+      "title": "Continuity of Care Document Intelligence",
+      "tags": [
+        "Unstructured",
+        "AI & workflow",
+        "Medium"
+      ],
+      "summary": "Extract, classify, and route key clinical details from scanned and faxed documents to reduce manual review and improve follow-up."
+    },
+    {
+      "id": "command-center",
+      "title": "Clinical Command Center",
+      "tags": [
+        "System + streaming",
+        "Predictive",
+        "High"
+      ],
+      "summary": "Combine operational, clinical, and event data to help leaders manage patient flow, capacity, discharge readiness, and bottlenecks."
+    },
+    {
+      "id": "clinician-scheduling",
+      "title": "Clinician Scheduling Optimization",
+      "tags": [
+        "Operational",
+        "Predictive",
+        "High"
+      ],
+      "summary": "Forecast demand and align clinician capacity, access goals, utilization patterns, and patient appointment needs."
+    },
+    {
+      "id": "supply",
+      "title": "Supply Chain Optimization",
+      "tags": [
+        "ERP",
+        "Forecast",
+        "Medium"
+      ],
+      "summary": "Connect utilization, cost, vendor, and inventory signals to reduce variance and improve service-line decision making."
+    },
+    {
+      "id": "patient-engagement",
+      "title": "Patient Engagement Chatbot",
+      "tags": [
+        "Knowledge + ops",
+        "AI & workflow",
+        "Lakebase",
+        "High"
+      ],
+      "summary": "Ground patient-facing or staff-assisted engagement in governed knowledge, operational context, and workflow integrations."
+    }
+  ],
+  "featured_acquisition_story": {
+    "title": "Post-Acquisition Data Integration Hub",
+    "storyline": [
+      "Acquire sources",
+      "Profile quality",
+      "Align definitions",
+      "Certify metrics",
+      "Analyze in Sigma"
+    ],
+    "step_01_source_labels": [
+      "Parkview EHR",
+      "Acquired EHR(s)",
+      "Finance System(s)",
+      "Supply Chain System(s)",
+      "Workforce System(s)"
+    ],
+    "bottom_cards": [
+      {
+        "title": "Benefits",
+        "copy": "Moderate estimate ranges for discussion: 20-35% less reconciliation effort, 25-40% faster KPI onboarding for acquired entities, earlier quality issue visibility, and a repeatable playbook for future transactions."
+      },
+      {
+        "title": "Complexity",
+        "copy": "Medium. Higher if source data lacks dictionary coverage, identity resolution, or finance definition alignment."
+      }
+    ]
+  }
 }

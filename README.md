@@ -32,4 +32,4 @@ Then open `http://localhost:8080`.
 
 ## June 2026 update: Content review + provider demo integration
 
-This version applies the submitted content-review workbook updates and adds a new **Databricks App Demos** section using only Provider demos from the supplied healthcare AI microsite. See `docs/update-notes-2026-06-11.md` for details.
+This version applies the submitted content-review workbook updates, adds a new **Databricks App Demos** section using only Provider demos from the supplied healthcare AI microsite, and applies the follow-up feedback pass documented in `docs/feedback-update-2026-06-11.md`.
