@@ -81,7 +81,7 @@
     ]
   },
   "demo_model": {
-    "filter": "Provider demos only",
+    "filter": "Art of the Possible",
     "fields": [
       "id",
       "title",
