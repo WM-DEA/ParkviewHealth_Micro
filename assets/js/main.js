@@ -4,22 +4,22 @@ const useCaseDetails = {
     outcome: "Rapid Insights",
     complexity: "Medium",
     what: "A repeatable integration pattern for bringing acquired clinical, financial, operational, and master data into Databricks, assessing quality, aligning definitions, and publishing certified metrics for executive consumption.",
-    solution: ["Parkview EHR", "Acquired EHR(s)", "Finance System(s)", "Supply Chain System(s)", "Workforce System(s)", "Integration Hub", "Certified metrics", "Sigma workbook"],
+    solution: ["Parkview EHR", "Acquired EHR(s)", "Finance System(s)", "Supply Chain System(s)", "Workforce System(s)", "Integration Hub", "Certified metrics", "AI/BI workbook"],
     prerequisites: ["Core Application System Data", "Certified Metrics", "Normalized Views", "Transaction Detail", "Data quality rules", "Security and stewardship"],
     benefits: ["25-40% faster KPI onboarding for acquired entities (directional estimate)", "20-35% less reconciliation and report rework (directional estimate)", "Earlier visibility into data quality risks", "Consistent board and executive reporting", "Reusable playbook for future transactions"],
     complexityDrivers: ["Source data dictionary coverage", "Patient / provider identity resolution", "Finance definition alignment", "Stewardship ownership and access model"],
-    partners: ["Databricks", "Sigma Computing", "Redox Engine where event feeds are in scope"]
+    partners: ["Databricks", "AI/BI", "Redox Engine where event feeds are in scope"]
   },
   "sigma-bi": {
-    title: "Sigma AI Business Intelligence",
+    title: "AI/BI Business Intelligence",
     outcome: "Rapid Insights",
     complexity: "Low to Medium",
     what: "A governed self-service analytics experience where leaders can explore trusted metrics, ask follow-up questions, and inspect operational and financial performance without recreating business logic in every report.",
-    solution: ["Certified metrics", "Sigma workbook", "AI-assisted exploration", "Executive decisions"],
+    solution: ["Certified metrics", "AI/BI workbook", "AI-assisted exploration", "Executive decisions"],
     prerequisites: ["Core system data", "Certified Metrics", "Normalized Views", "Unity Catalog / access model", "Semantic definitions"],
     benefits: ["Fewer conflicting KPI conversations", "Faster answers for business leaders", "Reduced report backlog", "Consistent logic across dashboards and ad hoc analysis"],
     complexityDrivers: ["Metric ownership", "Existing BI/report inventory", "Security roles", "Executive priority alignment"],
-    partners: ["Sigma Computing", "Databricks"]
+    partners: ["AI/BI", "Databricks"]
   },
   "redox-adt": {
     title: "Redox ADT Event Enablement",
@@ -74,7 +74,7 @@ const useCaseDetails = {
     prerequisites: ["ERP data", "Financial data", "Operational data", "Forecast / Budget inputs", "Service-line definitions"],
     benefits: ["Better cost variance insight", "Improved inventory and vendor planning", "Reduced disconnected analysis", "Stronger service-line decision support"],
     complexityDrivers: ["ERP data quality", "Item master standardization", "Service-line attribution", "Vendor data integration"],
-    partners: ["Databricks", "Sigma Computing"]
+    partners: ["Databricks", "AI/BI"]
   },
   "patient-engagement": {
     title: "Patient Engagement Chatbot",

@@ -80,7 +80,7 @@
       ],
       "initial_use_cases": [
         "Post-Acquisition Data Integration Hub",
-        "Sigma AI Business Intelligence",
+        "AI/BI Business Intelligence",
         "Executive KPI confidence layer"
       ],
       "future_use_cases": [
@@ -164,7 +164,7 @@
     {
       "title": "Rapid Insights",
       "tools": [
-        "Sigma Computing",
+        "AI/BI",
         "Databricks SQL",
         "Databricks Genie",
         "Databricks Apps"
@@ -371,9 +371,9 @@
         "Foundation: System data",
         "Outcome: Rapid insights",
         "Complexity: Medium",
-        "Partners: Sigma + Redox"
+        "Partners: AI/BI + Redox"
       ],
-      "summary": "Integrate acquired EHR and financial sources into Databricks, profile data quality, align definitions to Parkview standards, and publish certified metrics that executives can analyze in Sigma.",
+      "summary": "Integrate acquired EHR and financial sources into Databricks, profile data quality, align definitions to Parkview standards, and publish certified metrics that executives can analyze in AI/BI.",
       "solution_sketch": [
         "Parkview EHR",
         "Acquired EHR(s)",
@@ -381,7 +381,7 @@
         "Supply Chain System(s)",
         "Workforce System(s)",
         "Integration Hub",
-        "Sigma executive workbook"
+        "AI/BI executive workbook"
       ],
       "expected_benefits": [
         "25-40% faster KPI onboarding for acquired entities (directional estimate)",
@@ -394,11 +394,11 @@
     },
     {
       "id": "sigma-bi",
-      "title": "Sigma AI Business Intelligence",
+      "title": "AI/BI Business Intelligence",
       "tags": [
         "System data",
         "Rapid insights",
-        "Sigma",
+        "AI/BI",
         "Low-Med"
       ],
       "summary": "Give business leaders trusted, conversational exploration and dashboards over certified metrics without recreating logic in every report."
@@ -473,7 +473,7 @@
       "Profile quality",
       "Align definitions",
       "Certify metrics",
-      "Analyze in Sigma"
+      "Analyze in AI/BI"
     ],
     "step_01_source_labels": [
       "Parkview EHR",
